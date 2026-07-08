@@ -802,14 +802,227 @@ section {
   }
 }
 
-@media (max-width: 768px) {
-  .hero {
-    padding-top: 6.5rem;
-  }
-  .hero__cta-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+/* ==========================================================================
+   Tablet
+   ========================================================================== */
+
+@media (max-width:992px){
+
+.hero{
+
+min-height:auto;
+padding-top:7rem;
+padding-bottom:8rem;
+
+}
+
+.hero__headline{
+
+font-size:clamp(2.8rem,9vw,4.8rem);
+
+}
+
+.hero__sub{
+
+font-size:1.05rem;
+max-width:100%;
+
+}
+
+.hero__thread{
+
+left:5%;
+
+}
+
+.hero__scroll-hint{
+
+bottom:1.5rem;
+
+}
+
+}
+
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+
+@media (max-width:768px){
+
+.hero{
+
+min-height:auto;
+padding-top:6.5rem;
+padding-bottom:9rem;
+
+}
+
+.hero__thread{
+
+display:none;
+
+}
+
+.hero__wave{
+
+height:110px;
+
+}
+
+.hero__headline{
+
+font-size:clamp(2.3rem,10vw,3.6rem);
+line-height:1.05;
+margin-bottom:1.4rem;
+
+}
+
+.hero__sub{
+
+font-size:1rem;
+line-height:1.7;
+margin-bottom:2rem;
+
+}
+
+.hero__cta-row{
+
+width:100%;
+flex-direction:column;
+align-items:stretch;
+gap:.9rem;
+margin-bottom:2.2rem;
+
+}
+
+.hero__cta-row .btn{
+
+width:100%;
+justify-content:center;
+
+}
+
+.hero__badge{
+
+width:100%;
+max-width:100%;
+
+display:flex;
+align-items:flex-start;
+
+gap:.8rem;
+
+padding:1rem 1.1rem;
+
+border-radius:20px;
+
+}
+
+.hero__badge strong{
+
+display:block;
+font-size:1rem;
+
+}
+
+.hero__badge span{
+
+display:block;
+font-size:.75rem;
+line-height:1.45;
+
+}
+
+.hero__badge-stars{
+
+font-size:.72rem;
+flex-shrink:0;
+
+}
+
+.hero__scroll-hint{
+
+left:50%;
+bottom:1.25rem;
+
+}
+
+.hero__scroll-hint span{
+
+font-size:.62rem;
+letter-spacing:.16em;
+
+}
+
+.hero__scroll-line{
+
+height:34px;
+
+}
+
+}
+
+
+/* ==========================================================================
+   Small Phones
+   ========================================================================== */
+
+@media (max-width:480px){
+
+.hero{
+
+padding-top:6rem;
+padding-bottom:10rem;
+
+}
+
+.hero__eyebrow{
+
+font-size:.72rem;
+letter-spacing:.16em;
+
+}
+
+.hero__headline{
+
+font-size:2.25rem;
+
+}
+
+.hero__sub{
+
+font-size:.95rem;
+
+}
+
+.hero__badge{
+
+flex-direction:column;
+align-items:flex-start;
+
+gap:.45rem;
+
+}
+
+.hero__badge-stars{
+
+margin-bottom:.15rem;
+
+}
+
+.hero__scroll-hint{
+
+bottom:.9rem;
+
+}
+
+.hero__scroll-line{
+
+height:28px;
+
+}
+
 }
 
 /* ==========================================================================
