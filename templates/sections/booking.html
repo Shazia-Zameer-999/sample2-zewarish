@@ -3,9 +3,9 @@
   <div class="booking__thread"></div>
   <div class="container booking__grid">
     <div class="booking__intro" data-reveal>
-      <span class="eyebrow"><i class="fa-solid fa-minus"></i> Book Appointment</span>
-      <h2 class="section-title">Reserve your slot.</h2>
-      <p class="section-subtitle">Tell us what you need and when. We confirm every booking by phone within a few hours.</p>
+      <span class="eyebrow"><i class="fa-solid fa-minus"></i> Book Consultation</span>
+      <h2 class="section-title">Reserve your private viewing.</h2>
+      <p class="section-subtitle">Tell us what you are looking for and when you would like to visit. We confirm every consultation by phone within a few hours.</p>
       <div class="booking__contact-quick">
         <a href="tel:{{ content.business.phone | replace(' ', '') }}"><i class="fa-solid fa-phone"></i> {{ content.business.phone_display }}</a>
         <a href="{{ content.socials.whatsapp }}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp us</a>
@@ -30,20 +30,20 @@
         <div class="form-field">
           <label for="bf-service">Service</label>
           <select id="bf-service" name="service" required>
-            <option value="" disabled selected>Choose a service</option>
+            <option value="" disabled selected>Choose a jewellery need</option>
             {% for cat in content.services.categories %}
             <optgroup label="{{ cat.title }}">
               {% for s in cat.services %}<option value="{{ s }}">{{ s }}</option>{% endfor %}
             </optgroup>
             {% endfor %}
-            <optgroup label="Bridal">
+            <optgroup label="Bridal Jewellery">
               {% for pkg in content.services.bridal.packages %}<option value="{{ pkg.name }}">{{ pkg.name }}</option>{% endfor %}
             </optgroup>
           </select>
           <span class="form-error" data-error-for="service"></span>
         </div>
         <div class="form-field">
-          <label for="bf-stylist">Preferred Stylist</label>
+          <label for="bf-stylist">Preferred Advisor</label>
           <select id="bf-stylist" name="stylist">
             <option value="Any Available">Any Available</option>
             {% for m in content.team.members %}<option value="{{ m.name }}">{{ m.name }} &mdash; {{ m.role }}</option>{% endfor %}
@@ -70,11 +70,11 @@
 
       <div class="form-field">
         <label for="bf-notes">Notes (optional)</label>
-        <textarea id="bf-notes" name="notes" rows="3" placeholder="Anything we should know before your visit?"></textarea>
+        <textarea id="bf-notes" name="notes" rows="3" placeholder="Occasion, budget, metal preference, size, or custom idea?"></textarea>
       </div>
 
       <button type="submit" class="btn btn-thread btn-thread--primary btn-thread--block" data-magnetic>
-        <span>Request Appointment</span><i class="fa-solid fa-calendar-check"></i>
+        <span>Request Consultation</span><i class="fa-solid fa-calendar-check"></i>
       </button>
       <div class="form-status" id="bookingStatus" role="status" aria-live="polite"></div>
     </form>

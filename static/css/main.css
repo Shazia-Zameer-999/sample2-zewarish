@@ -1,5 +1,5 @@
 /* ==========================================================================
-   FAST FASHION BEAUTY PARLOUR — Reusable Salon Engine
+   ZEWARISH — Fine Jewellery Brand
    main.css — Part 1: Reset, base, typography, buttons, cursor, swatch art
    ========================================================================== */
 
@@ -50,7 +50,7 @@ section{ position:relative; padding:var(--section-y) 0; }
 .cursor,.cursor-ring,.cursor-glow{ position:fixed; top:0; left:0; pointer-events:none; z-index:9998; will-change:transform; }
 .cursor{ width:8px; height:8px; border-radius:50%; background:var(--bordeaux); transform:translate(-50%,-50%); }
 .cursor-ring{ width:38px; height:38px; border:1px solid var(--gold); border-radius:50%; transform:translate(-50%,-50%); transition:width .25s var(--ease),height .25s var(--ease),border-color .25s; }
-.cursor-glow{ width:340px; height:340px; border-radius:50%; transform:translate(-50%,-50%); background:radial-gradient(circle,rgba(184,135,74,0.14),transparent 70%); z-index:1; }
+.cursor-glow{ width:340px; height:340px; border-radius:50%; transform:translate(-50%,-50%); background:radial-gradient(circle,rgba(201,154,67,0.14),transparent 70%); z-index:1; }
 .cursor-ring.is-active{ width:56px; height:56px; border-color:var(--bordeaux); }
 @media (hover:none),(max-width:900px){ .cursor,.cursor-ring,.cursor-glow{ display:none; } }
 
@@ -81,7 +81,7 @@ section{ position:relative; padding:var(--section-y) 0; }
 .btn-thread--block{ width:100%; justify-content:center; }
 
 /* Abstract "swatch" placeholder art — replaces stock photography with
-   editorial gradient textures in the studio palette. Swap for real photos
+   jewellery-inspired gradient textures in the Zewarish palette. Swap for real photos
    later by editing .swatch background rules or gallery.json image URLs. */
 .swatch{
   position:relative; border-radius:var(--radius-md); overflow:hidden;
@@ -98,18 +98,18 @@ section{ position:relative; padding:var(--section-y) 0; }
     radial-gradient(circle at 20% 20%, rgba(255,255,255,.10), transparent 40%),
     radial-gradient(circle at 80% 85%, rgba(0,0,0,.15), transparent 45%);
 }
-.swatch--1{ background:linear-gradient(155deg,#7A2438,#4E1523); }
-.swatch--2{ background:linear-gradient(155deg,#B8874A,#7A2438); }
-.swatch--3{ background:linear-gradient(155deg,#E7C6C0,#B8874A); }
-.swatch--4{ background:linear-gradient(155deg,#4E1523,#2A0F16); }
-.swatch--5{ background:linear-gradient(155deg,#B8874A,#E4C89A); }
-.swatch--6{ background:linear-gradient(155deg,#7A2438,#E7C6C0); }
-.swatch--7{ background:linear-gradient(155deg,#2A0F16,#7A2438); }
-.swatch--8{ background:linear-gradient(155deg,#E4C89A,#7A2438); }
-.swatch--9{ background:linear-gradient(155deg,#4E1523,#B8874A); }
-.swatch--10{ background:linear-gradient(155deg,#E7C6C0,#4E1523); }
-.swatch--11{ background:linear-gradient(155deg,#B8874A,#2A0F16); }
-.swatch--12{ background:linear-gradient(155deg,#7A2438,#B8874A); }
+.swatch--1{ background:linear-gradient(155deg,#7F1734,#17110C); }
+.swatch--2{ background:linear-gradient(155deg,#C99A43,#7F1734); }
+.swatch--3{ background:linear-gradient(155deg,#FFF8EE,#C99A43); }
+.swatch--4{ background:linear-gradient(155deg,#0F2E2A,#17110C); }
+.swatch--5{ background:linear-gradient(155deg,#C99A43,#F0D38A); }
+.swatch--6{ background:linear-gradient(155deg,#7F1734,#E8B7AA); }
+.swatch--7{ background:linear-gradient(155deg,#17110C,#7F1734); }
+.swatch--8{ background:linear-gradient(155deg,#F0D38A,#7F1734); }
+.swatch--9{ background:linear-gradient(155deg,#4A0C1D,#C99A43); }
+.swatch--10{ background:linear-gradient(155deg,#E8B7AA,#0F2E2A); }
+.swatch--11{ background:linear-gradient(155deg,#C99A43,#17110C); }
+.swatch--12{ background:linear-gradient(155deg,#7F1734,#C99A43); }
 .swatch__label{ position:absolute; bottom:1rem; left:1rem; color:#fff; font-size:.75rem; letter-spacing:.06em; z-index:2; }
 
 /* Reveal-on-scroll base state (JS/GSAP toggles .is-visible) */
@@ -215,7 +215,7 @@ section{ position:relative; padding:var(--section-y) 0; }
 .hero__headline{ font-size:clamp(3rem,8vw,6.4rem); margin:0 0 2rem; }
 .hero__line{ display:block; overflow:hidden; }
 .hero__line-inner{ display:block; transform:translateY(110%); }
-.hero__sub{ max-width:520px; font-size:1.15rem; color:#6b5b56; line-height:1.65; margin-bottom:2.5rem; }
+.hero__sub{ max-width:620px; font-size:1.15rem; color:#6b5b56; line-height:1.65; margin-bottom:2.5rem; }
 .hero__cta-row{ display:flex; flex-wrap:wrap; gap:1rem; margin-bottom:3.5rem; }
 .hero__badge{ display:inline-flex; align-items:center; gap:.9rem; background:var(--glass-bg); backdrop-filter:blur(var(--glass-blur)); border:1px solid var(--glass-border); border-radius:var(--radius-pill); padding:.8rem 1.4rem .8rem 1rem; }
 .hero__badge-stars{ color:var(--gold); font-size:.8rem; letter-spacing:1px; }
@@ -239,6 +239,17 @@ section{ position:relative; padding:var(--section-y) 0; }
 .about__visual{ position:relative; }
 .about__frame{ position:relative; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-lift); }
 .about__swatch{ aspect-ratio:4/5; border-radius:var(--radius-lg); }
+.swatch__image{
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover; /* or contain, depending on the effect you want */
+
+  display: block;
+
+}
 .about__frame-thread{ position:absolute; inset:14px; border:1px solid rgba(251,245,236,.5); border-radius:calc(var(--radius-lg) - 10px); pointer-events:none; }
 .about__quote-card{
   position:absolute; bottom:-2rem; right:-2rem; max-width:280px; background:var(--ivory);
@@ -320,7 +331,7 @@ section{ position:relative; padding:var(--section-y) 0; }
   transition:transform .4s var(--ease), border-color .4s var(--ease);
 }
 .bridal-card:hover{ transform:translateY(-8px); border-color:var(--gold); }
-.bridal-card--featured{ background:linear-gradient(160deg,rgba(184,135,74,.16),rgba(122,36,56,.2)); border-color:var(--gold); }
+.bridal-card--featured{ background:linear-gradient(160deg,rgba(201,154,67,.16),rgba(127,23,52,.2)); border-color:var(--gold); }
 .bridal-card__tag{ position:absolute; top:-13px; left:2rem; background:var(--gold); color:var(--ink); font-size:.68rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; padding:.35rem .9rem; border-radius:var(--radius-pill); }
 .bridal-card h3{ color:var(--ivory); font-size:1.5rem; margin-bottom:.6rem; }
 .bridal-card__desc{ font-size:.92rem; color:rgba(251,245,236,.65); margin-bottom:1rem; line-height:1.55; }

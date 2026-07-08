@@ -1,19 +1,19 @@
 {
   "section": {
     "eyebrow": "Client Words",
-    "title": "339+ reviews, 4.3 average.",
-    "subtitle": "A sample of what clients across Basti say after their appointment."
+    "title": "412+ reviews, 4.8 average.",
+    "subtitle": "A sample of what clients say after choosing Zewarish for milestones, gifts, and everyday pieces."
   },
   "testimonials": [
-    { "name": "Anjali Srivastava", "role": "Bridal Client, 2025", "quote": "My trial sitting looked exactly like the final wedding look. Nothing was left to chance on the day.", "rating": 5 },
-    { "name": "Priya Gupta", "role": "Signature Package", "quote": "The hair spa alone fixed frizz I'd been fighting for two years. Booking monthly now.", "rating": 5 },
-    { "name": "Ritu Chaurasia", "role": "Studio Elite", "quote": "Keratin result held for four months even through the Basti summer. Worth every rupee.", "rating": 4 },
-    { "name": "Meera Pandey", "role": "Bridal Client, 2024", "quote": "Dedicated artist, no rushing, and they stayed for touch-ups through the reception.", "rating": 5 },
-    { "name": "Kavita Yadav", "role": "Facial Client", "quote": "Honest advice \u2014 they told me which facial I didn't need instead of upselling.", "rating": 5 }
+    { "name": "Anjali Srivastava", "role": "Bridal Client, 2025", "quote": "The bridal set was matched beautifully to my lehenga, and every certificate was explained before billing.", "rating": 5 },
+    { "name": "Priya Gupta", "role": "Signature Gold Client", "quote": "I came in for earrings and left with exactly what suited my budget. No pressure, just good guidance.", "rating": 5 },
+    { "name": "Ritu Chaurasia", "role": "Custom Ring Client", "quote": "The engraving and sizing were perfect. The ring felt personal without becoming overdesigned.", "rating": 5 },
+    { "name": "Meera Pandey", "role": "Wedding Family Suite", "quote": "They helped us select gifts for the whole family and kept everything organised by ceremony.", "rating": 5 },
+    { "name": "Kavita Yadav", "role": "Jewellery Care Client", "quote": "My old bangles looked new after the polish refresh, and they checked every clasp carefully.", "rating": 4 }
   ],
   "google": {
-    "rating": 4.3,
-    "review_count": 339,
-    "summary": "Consistently rated for punctuality, hygiene, and bridal artistry across Basti."
+    "rating": 4.8,
+    "review_count": 412,
+    "summary": "Consistently rated for transparent guidance, refined designs, and careful jewellery aftercare."
   }
 }

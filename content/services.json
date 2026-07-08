@@ -1,77 +1,77 @@
 {
   "section": {
-    "eyebrow": "What We Do",
-    "title": "Services, finished properly.",
-    "subtitle": "Every category below is delivered by a specialist \u2014 not a generalist stylist rotating stations."
+    "eyebrow": "What We Craft",
+    "title": "Jewellery services, handled with care.",
+    "subtitle": "Explore ready collections, custom orders, styling appointments, repairs, and bridal jewellery planning with a dedicated advisor."
   },
   "categories": [
     {
-      "id": "hair",
-      "icon": "scissors",
-      "title": "Hair",
-      "summary": "Cuts, styling, and treatments built around your face shape and hair health.",
-      "services": ["Precision Haircut", "Blow-Dry & Styling", "Keratin Smoothening", "Hair Spa Therapy", "Global & Root Colouring", "Highlights & Balayage"]
+      "id": "gold",
+      "icon": "coins",
+      "title": "Gold Jewellery",
+      "summary": "Hallmarked everyday and occasion pieces in yellow, rose, and antique gold finishes.",
+      "services": ["Gold Chains", "Bangles & Kadas", "Earrings & Studs", "Mangalsutras", "Temple Jewellery", "Antique Gold Sets"]
     },
     {
-      "id": "skin",
-      "icon": "droplet",
-      "title": "Skin Care",
-      "summary": "Facials and therapy sessions tailored to Basti's climate and your skin type.",
-      "services": ["De-Tan Facial", "Hydra Facial", "Gold Radiance Facial", "Anti-Ageing Therapy", "Acne Clarifying Treatment", "Bridal Skin Prep Course"]
+      "id": "diamonds",
+      "icon": "gem",
+      "title": "Diamond Jewellery",
+      "summary": "Certified diamond rings, bracelets, pendants, and statement pieces with clean contemporary settings.",
+      "services": ["Solitaire Rings", "Diamond Bands", "Tennis Bracelets", "Diamond Pendants", "Daily-Wear Studs", "Cocktail Rings"]
     },
     {
-      "id": "waxing",
-      "icon": "feather",
-      "title": "Waxing & Threading",
-      "summary": "Rica and chocolate wax systems with strictly single-use applicators.",
-      "services": ["Full Body Rica Wax", "Chocolate Wax", "Eyebrow Threading", "Upper Lip Threading", "Detan Waxing Combo"]
+      "id": "gemstones",
+      "icon": "certificate",
+      "title": "Gemstone Pieces",
+      "summary": "Emerald, ruby, sapphire, pearl, and kundan accents selected for tone, clarity, and character.",
+      "services": ["Navratna Jewellery", "Emerald Sets", "Ruby Rings", "Pearl Strings", "Kundan Earrings", "Gemstone Pendants"]
     },
     {
-      "id": "nails",
-      "icon": "hand",
-      "title": "Nail Care",
-      "summary": "Manicure, pedicure, and nail art finished to a photograph-ready sheen.",
-      "services": ["Classic Manicure", "Spa Pedicure", "Gel Polish", "Nail Extensions", "Bridal Nail Art"]
+      "id": "custom",
+      "icon": "pen-ruler",
+      "title": "Custom Design",
+      "summary": "Personalised jewellery designed around your story, budget, stone preference, and wearing style.",
+      "services": ["Name Pendants", "Engraved Rings", "Bespoke Bridal Sets", "Heirloom Redesign", "Stone Sourcing", "CAD Design Preview"]
     },
     {
-      "id": "makeup",
-      "icon": "brush",
-      "title": "Makeup & Styling",
-      "summary": "HD and airbrush makeup for events, parties, and portrait days.",
-      "services": ["Party Makeup", "HD Makeup", "Airbrush Makeup", "Saree & Draping", "Hairdo & Updos"]
+      "id": "gifting",
+      "icon": "gift",
+      "title": "Gifting",
+      "summary": "Elegant gifts for birthdays, anniversaries, festivals, baby showers, and milestone moments.",
+      "services": ["Gift Pendants", "Charm Bracelets", "Silver Keepsakes", "Festive Gift Boxes", "Corporate Gifting", "Personalised Packaging"]
     },
     {
-      "id": "spa",
-      "icon": "leaf",
-      "title": "Body & Spa",
-      "summary": "Relaxation and prep therapies for the days before a big event.",
-      "services": ["Body Polishing", "Detan Body Wrap", "Head Massage Therapy", "Foot Reflexology"]
+      "id": "care",
+      "icon": "wand-magic-sparkles",
+      "title": "Care & Repair",
+      "summary": "Cleaning, polishing, resizing, clasp checks, stone tightening, and restoration guidance.",
+      "services": ["Jewellery Cleaning", "Ring Resizing", "Stone Resetting", "Clasp Repair", "Polish Refresh", "Old Gold Consultation"]
     }
   ],
   "bridal": {
-    "eyebrow": "Bridal Studio",
-    "title": "Your wedding day, rehearsed.",
-    "subtitle": "Every bridal client gets a dedicated artist, a full trial sitting, and a fixed appointment window \u2014 no back-to-back bookings on the day.",
+    "eyebrow": "Bridal Jewellery",
+    "title": "Wedding jewellery, planned like a trousseau.",
+    "subtitle": "From engagement rings to wedding-day sets and family gifts, each bridal consultation balances outfit, ceremony, budget, and heirloom value.",
     "packages": [
       {
-        "name": "Signature Bridal",
-        "description": "HD makeup, hairdo, draping, and a pre-wedding trial sitting.",
-        "includes": ["HD Bridal Makeup", "Hairdo & Styling", "Saree/Lehenga Draping", "One Trial Sitting", "False Lashes & Touch-up Kit"],
-        "duration": "4\u20135 hrs",
+        "name": "Engagement Edit",
+        "description": "Rings, bracelets, pendants, and lightweight sets for engagement and pre-wedding functions.",
+        "includes": ["Ring Consultation", "Diamond or Gold Options", "Sizing Support", "Engraving Guidance", "Gift-Ready Packaging"],
+        "duration": "45-60 min",
         "featured": false
       },
       {
-        "name": "Editorial Bridal",
-        "description": "Our most-booked package \u2014 airbrush finish with two trial sittings.",
-        "includes": ["Airbrush HD Makeup", "Hairdo & Styling", "Draping", "Two Trial Sittings", "Skin Prep Facial (1 session)", "On-site Touch-up (2 hrs)"],
-        "duration": "5\u20136 hrs",
+        "name": "Bridal Heirloom Set",
+        "description": "Our signature bridal planning appointment for necklace, earrings, bangles, and matching details.",
+        "includes": ["Full Bridal Styling", "Gold, Kundan, or Polki Options", "Outfit Matching", "Custom Sizing", "Certificate Review", "Aftercare Plan"],
+        "duration": "90 min",
         "featured": true
       },
       {
-        "name": "Full Wedding Week",
-        "description": "Haldi, Mehendi, Sangeet, and Wedding-day looks, fully coordinated.",
-        "includes": ["4 Event Looks (Haldi/Mehendi/Sangeet/Wedding)", "Airbrush HD on Wedding Day", "Two Trial Sittings", "Full Skin Prep Course (3 sessions)", "Dedicated Artist for the Week"],
-        "duration": "Multi-day",
+        "name": "Wedding Family Suite",
+        "description": "A coordinated jewellery plan for bride, close family, gifting, and ceremony essentials.",
+        "includes": ["Bride Jewellery Plan", "Family Gift Selection", "Mangalsutra Consultation", "Bangle & Ring Sizing", "Delivery Timeline Planning"],
+        "duration": "Multi-session",
         "featured": false
       }
     ]

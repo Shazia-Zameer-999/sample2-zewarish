@@ -1,29 +1,29 @@
 {
-  "name": "Fast Fashion Beauty Parlour",
-  "tagline": "Basti's Editorial Bridal & Beauty House",
-  "short_name": "Fast Fashion",
-  "founded_year": 2014,
-  "description": "A premium bridal and beauty studio in Basti, Uttar Pradesh, trusted by hundreds of brides for hair, skin, and bridal artistry finished to an editorial standard.",
+  "name": "Zewarish",
+  "tagline": "Fine Jewellery, Bridal Sets & Custom Keepsakes",
+  "short_name": "Zewarish",
+  "founded_year": 2012,
+  "description": "A premium jewellery brand for certified gold, diamonds, gemstones, bridal sets, custom ornaments, and meaningful gifts crafted with a contemporary heirloom aesthetic.",
   "address": {
-    "line1": "Below UCO Bank",
-    "line2": "Near Hotel Prakash, Tiwari Tola",
+    "line1": "Zewarish Jewellery House",
+    "line2": "MG Road, Civil Lines",
     "city": "Basti",
     "state": "Uttar Pradesh",
     "country": "India",
     "pincode": "272001",
-    "full": "Below UCO Bank, Near Hotel Prakash, Tiwari Tola, Basti, Uttar Pradesh"
+    "full": "Zewarish Jewellery House, MG Road, Civil Lines, Basti, Uttar Pradesh"
   },
   "phone": "+91 87650 71161",
   "phone_display": "+91 87650 71161",
   "whatsapp": "+918765071161",
-  "email": "hello@fastfashionbeauty.in",
-  "rating": 4.3,
-  "review_count": 339,
+  "email": "hello@zewarish.com",
+  "rating": 4.8,
+  "review_count": 412,
   "hours": {
-    "mon_sat": "10:00 AM – 8:30 PM",
-    "sun": "11:00 AM – 6:00 PM"
+    "mon_sat": "10:30 AM - 8:00 PM",
+    "sun": "11:30 AM - 6:30 PM"
   },
-  "map_embed_query": "Fast Fashion Beauty Parlour, Tiwari Tola, Basti, Uttar Pradesh",
+  "map_embed_query": "Zewarish Jewellery House, Civil Lines, Basti, Uttar Pradesh",
   "map_lat": 26.7929,
   "map_lng": 82.7328
 }

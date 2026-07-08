@@ -1,13 +1,13 @@
 {
   "section": {
-    "eyebrow": "Meet the Studio",
-    "title": "The hands behind the finish.",
-    "subtitle": "Every artist trains continuously in bridal, colour, and skin therapy techniques."
+    "eyebrow": "Meet the House",
+    "title": "The people behind the pieces.",
+    "subtitle": "A focused team guiding design, sourcing, styling, and aftercare."
   },
   "members": [
-    { "name": "Sunita Verma", "role": "Founder & Lead Bridal Artist", "bio": "11 years in bridal HD and airbrush makeup across Eastern UP.", "swatch": 1 },
-    { "name": "Rekha Mishra", "role": "Senior Hair Stylist", "bio": "Specialist in keratin systems and colour correction.", "swatch": 2 },
-    { "name": "Pooja Tiwari", "role": "Skin Therapist", "bio": "Certified in advanced facials and anti-ageing therapy.", "swatch": 3 },
-    { "name": "Simran Kaur", "role": "Nail & Detail Artist", "bio": "Leads bridal nail art and fine detailing work.", "swatch": 4 }
+    { "name": "Aarav Mehra", "role": "Founder & Jewellery Curator", "bio": "Leads collection direction, bridal planning, and high-value consultations.", "swatch": 1 },
+    { "name": "Naina Kapoor", "role": "Diamond & Gemstone Advisor", "bio": "Guides stone selection, certification, clarity, colour, and setting choices.", "swatch": 2 },
+    { "name": "Rhea Malhotra", "role": "Bridal Jewellery Stylist", "bio": "Specialist in outfit matching, ceremony styling, and family gift coordination.", "swatch": 3 },
+    { "name": "Kabir Sethi", "role": "Aftercare & Repair Lead", "bio": "Handles polish refresh, resizing guidance, clasp checks, and restoration support.", "swatch": 4 }
   ]
 }

@@ -1,12 +1,12 @@
 {
   "section": {
-    "eyebrow": "Beauty Notes",
-    "title": "From the studio journal.",
-    "subtitle": "Short, practical notes from our stylists \u2014 not filler content."
+    "eyebrow": "Jewellery Notes",
+    "title": "From the house journal.",
+    "subtitle": "Short, practical notes on buying, styling, caring for, and customising jewellery."
   },
   "posts": [
-    { "id": "b1", "title": "How to Prep Your Skin 6 Weeks Before Your Wedding", "excerpt": "The realistic timeline our bridal clients follow, from facials to patch tests.", "category": "Bridal", "read_time": "4 min", "swatch": 3 },
-    { "id": "b2", "title": "Keratin vs. Nanoplastia: Which Suits Basti's Humidity?", "excerpt": "A stylist's honest comparison for frizz control in North Indian summers.", "category": "Hair", "read_time": "5 min", "swatch": 7 },
-    { "id": "b3", "title": "The Truth About 'Instant Glow' Facials", "excerpt": "What actually happens in a Gold Radiance Facial, and what to expect after.", "category": "Skin", "read_time": "3 min", "swatch": 10 }
+    { "id": "b1", "title": "How to Plan Bridal Jewellery Around Your Lehenga", "excerpt": "A simple order for choosing necklace depth, earrings, bangles, and finishing details.", "category": "Bridal", "read_time": "4 min", "swatch": 3 },
+    { "id": "b2", "title": "Gold, Diamond, or Gemstone: What Makes Sense for Daily Wear?", "excerpt": "A practical guide to durability, comfort, care, and long-term value.", "category": "Buying Guide", "read_time": "5 min", "swatch": 7 },
+    { "id": "b3", "title": "How to Store Jewellery So It Keeps Its Finish", "excerpt": "Small aftercare habits that protect polish, clasps, stones, and chains.", "category": "Care", "read_time": "3 min", "swatch": 10 }
   ]
 }

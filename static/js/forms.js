@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const bookingForm = document.getElementById("bookingForm");
   bookingForm?.addEventListener("submit", (e) => {
     e.preventDefault();
-    submitForm(bookingForm, "/api/book", document.getElementById("bookingStatus"), "Appointment requested!");
+    submitForm(bookingForm, "/api/book", document.getElementById("bookingStatus"), "Consultation requested!");
   });
 
   const newsletterForm = document.getElementById("newsletterForm");

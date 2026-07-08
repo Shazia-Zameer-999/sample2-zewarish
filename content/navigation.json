@@ -1,16 +1,14 @@
 {
-  "logo_text": "Fast Fashion",
-  "logo_suffix": "Beauty Parlour",
+  "logo_text": "Zewarish",
+  "logo_suffix": "Jewellery",
   "links": [
-    { "label": "Studio", "target": "#about" },
+    { "label": "House", "target": "#about" },
     { "label": "Services", "target": "#services" },
-    { "label": "Bridal", "target": "#bridal" },
-    { "label": "Gallery", "target": "#gallery" },
-    { "label": "Pricing", "target": "#pricing" },
+    { "label": "Collections", "target": "#gallery" },
     { "label": "Reviews", "target": "#testimonials" },
     { "label": "FAQ", "target": "#faq" },
     { "label": "Contact", "target": "#contact" }
   ],
-  "cta_label": "Book Appointment",
+  "cta_label": "Book Consultation",
   "cta_target": "#book"
 }

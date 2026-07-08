@@ -1,40 +1,19 @@
-# Fast Fashion Beauty Parlour — Reusable Salon/Business Website Engine
+# Zewarish — Fine Jewellery Website
 
-A single-page, cinematically-animated Flask website, built so the **entire
-site can be re-skinned for a new business by editing JSON files** — no
-template or Python changes required for a same-industry clone.
-
-Built for: **Fast Fashion Beauty Parlour**, Tiwari Tola, Basti, UP.
+A single-page, cinematically animated Flask website for **Zewarish**, a fine jewellery brand focused on gold, diamonds, gemstones, bridal sets, custom keepsakes, gifting, and aftercare.
 
 ## What's in this build
 
-This is a functional Flask salon website engine: every visible section,
-all animations (Lenis smooth scroll, GSAP ScrollTrigger reveals, custom
-cursor, magnetic buttons, tilt cards, split-text hero, animated counters,
-gallery filters + lightbox, before/after slider, FAQ accordion,
-testimonials carousel, marquee Instagram strip), plus working booking and
-newsletter APIs that persist to JSON files.
+The site is content-driven through `content/*.json`, with reusable sections for hero, about, stats, services, bridal jewellery, collections, pricing, offers, testimonials, team, blog, Instagram, FAQ, booking, contact, and newsletter.
 
-It also includes a lightweight admin dashboard for studio staff:
+It also includes:
 
 - `/admin` password login
-- appointment request list with status changes
+- consultation request list with status changes
 - newsletter subscriber list
-- JSON exports for bookings and subscribers
+- JSON exports for requests and subscribers
 - `/robots.txt`, `/sitemap.xml`, `/manifest.webmanifest`, `/healthz`
-- favicon and OpenGraph SVG assets in `static/images/`
-
-**Not included in this phase** (flagged so nothing is assumed silently):
-- Database-backed admin accounts (the dashboard uses a single password from
-  `ADMIN_PASSWORD` and JSON files for storage)
-- Real photography — the gallery, team, and blog sections use abstract
-  gradient "swatches" in the studio's palette instead of stock photos.
-  Swap these for real images by editing the `.swatch` rules in
-  `static/css/main.css` or extending gallery items with an `image_url`
-  field and updating the templates to use `<img>` instead of the swatch div.
-- Outbound email confirmations (booking/newsletter currently just persist
-  to `data/*.json`; wire up Flask-Mail or an API like Resend/SendGrid
-  when you're ready for real email).
+- Zewarish favicon and OpenGraph SVG assets in `static/images/`
 
 ## Run it
 
@@ -65,62 +44,32 @@ default password: admin123
 
 Set `ADMIN_PASSWORD` and `SECRET_KEY` in the environment before deploying.
 
-## How the reusable engine works
+## Content Model
 
-Every visible string, price, image swatch number, and nav link comes from
-`/content/*.json`. Templates never hardcode copy. To relaunch this exact
-codebase for a **different business** (a café, gym, clinic, etc.):
+Every visible brand detail lives in JSON:
 
-1. Duplicate the project folder.
-2. Edit `content/business.json`, `content/seo.json`, `content/navigation.json`,
-   `content/socials.json` with the new business's identity.
-3. Rewrite `content/homepage.json`, `content/services.json`,
-   `content/gallery.json`, `content/pricing.json`, `content/offers.json`,
-   `content/faq.json`, `content/blog.json`, `content/testimonials.json`,
-   `content/team.json` with the new business's real content.
-4. Edit `content/theme.json` — every color, font, radius, shadow, and
-   spacing token flows into CSS variables in `templates/base.html`.
-   Changing this one file restyles the entire site.
-5. Done. No template edits needed unless the new business needs a
-   structurally different section (e.g. a restaurant needs a "Menu"
-   section instead of "Bridal Services" — copy `templates/sections/bridal.html`
-   as a starting point and point it at a new `content/menu.json`).
-
-## Project structure
-
-```
-app.py                  Flask application factory + entrypoint
-config.py                Environment-driven Flask config
-blueprints/main.py       Routes: public site, APIs, admin dashboard, SEO/PWA utilities
-content/*.json           ALL site copy, pricing, gallery, theme tokens — edit these to reskin
-utils/content_loader.py  Loads + caches content/*.json into one namespace
-utils/seo_helpers.py     Builds JSON-LD LocalBusiness schema from config
-templates/base.html      Shell: theme CSS variables, fonts, vendor scripts
-templates/index.html     Assembles all 19 sections in order
-templates/sections/*     One template per section (hero, gallery, pricing, booking, ...)
-templates/partials/*     Loader, cursor, navbar, footer
-templates/admin/*        Password login and dashboard for booking/subscriber management
-templates/macros/ui.html Reusable Jinja macros: section_header, btn_thread, swatch
-static/css/main.css      All styling, theme-token driven
-static/js/*.js           cursor.js, scroll.js (Lenis), animations.js (GSAP), gallery.js, forms.js
-data/*.json              Appointment + newsletter submissions land here (gitignore in production)
+```text
+content/business.json      Brand name, contact, hours, location, ratings
+content/seo.json           Meta title, description, keywords, schema type
+content/navigation.json    Logo text, nav links, CTA
+content/homepage.json      Hero, about, stats, why-choose, newsletter
+content/services.json      Jewellery categories and bridal packages
+content/gallery.json       Collection filters and swatch cards
+content/pricing.json       Starting ranges and inclusions
+content/offers.json        Seasonal offers
+content/testimonials.json  Reviews and Google rating summary
+content/team.json          Advisors and craft leads
+content/blog.json          Jewellery journal cards
+content/theme.json         Brand palette, fonts, spacing, shadows
 ```
 
-## Design direction
+## Design Direction
 
-Palette and type were chosen deliberately for this brief rather than
-defaulted: a bordeaux/antique-gold "bridal editorial" system (Fraunces
-display serif + Manrope body) instead of a generic salon pastel-pink or
-cream/terracotta template look — see `content/theme.json` for the exact
-tokens and rationale in code comments.
+Zewarish uses a warm jewellery palette: deep ink, bordeaux, antique gold, ivory, and soft blush, with Cormorant Garamond for the display voice and Manrope for interface text. The placeholder collection art uses jewel-toned swatches until real product photography is added.
 
-## Suggested next phases
+## Suggested Next Phases
 
-1. **Database upgrade** — SQLAlchemy models and Flask-Login users if the
-   salon needs multiple staff accounts or long-term reporting.
-2. **Real photography** — replace `.swatch` placeholders with an image
-   pipeline (WebP, lazy-loaded, responsive `srcset`).
-3. **Email/SMS** — Flask-Mail, Resend, Twilio, or WhatsApp API for booking
-   confirmations.
-4. **Multi-tenant config** — a `clients/<slug>/content/` folder structure
-   if you want several businesses served from one deployment.
+1. Add real jewellery photography with WebP, lazy loading, and responsive `srcset`.
+2. Rename internal booking fields from legacy `appointment/stylist` wording to `consultation/advisor` if backward compatibility with existing JSON data is not needed.
+3. Move requests from JSON files to a database for production use.
+4. Add email/SMS/WhatsApp confirmations for consultation requests.

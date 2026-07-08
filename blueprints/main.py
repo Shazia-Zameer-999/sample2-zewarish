@@ -116,7 +116,7 @@ def book_appointment():
     if not PHONE_RE.match(phone):
         errors["phone"] = "Please enter a valid phone number."
     if not service:
-        errors["service"] = "Please choose a service."
+        errors["service"] = "Please choose a jewellery need."
     if not preferred_date:
         errors["date"] = "Please choose a date."
     if not time_slot:
@@ -144,7 +144,7 @@ def book_appointment():
         current_app.logger.exception("Failed to persist appointment")
         return jsonify({"ok": False, "errors": {"_general": "Something went wrong. Please call us directly."}}), 500
 
-    return jsonify({"ok": True, "message": "Appointment request received! We'll confirm by phone within a few hours."})
+    return jsonify({"ok": True, "message": "Consultation request received! We'll confirm by phone within a few hours."})
 
 
 @main_bp.route("/api/newsletter", methods=["POST"])
@@ -261,8 +261,8 @@ def manifest():
     theme = content.get("theme", {})
     palette = theme.get("palette", {})
     payload = {
-        "name": business.get("name", "Salon Engine"),
-        "short_name": business.get("short_name", "Salon"),
+        "name": business.get("name", "Zewarish"),
+        "short_name": business.get("short_name", "Zewarish"),
         "start_url": "/",
         "display": "standalone",
         "background_color": palette.get("ivory", "#ffffff"),

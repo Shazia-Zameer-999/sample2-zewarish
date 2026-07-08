@@ -2,8 +2,8 @@
 <section class="contact" id="contact" data-section="contact">
   <div class="container contact__grid">
     <div class="contact__info" data-reveal>
-      <span class="eyebrow"><i class="fa-solid fa-minus"></i> Visit The Studio</span>
-      <h2 class="section-title">Find us in Tiwari Tola.</h2>
+      <span class="eyebrow"><i class="fa-solid fa-minus"></i> Visit The Showroom</span>
+      <h2 class="section-title">Find the Zewarish showroom.</h2>
       <div class="contact__card">
         <i class="fa-solid fa-location-dot"></i>
         <div>
@@ -14,14 +14,14 @@
       <div class="contact__card">
         <i class="fa-solid fa-phone"></i>
         <div>
-          <strong>Call the studio</strong>
+          <strong>Call the showroom</strong>
           <p><a href="tel:{{ content.business.phone | replace(' ', '') }}">{{ content.business.phone_display }}</a></p>
         </div>
       </div>
       <div class="contact__card">
         <i class="fa-solid fa-clock"></i>
         <div>
-          <strong>Studio hours</strong>
+          <strong>Showroom hours</strong>
           <p>Mon&ndash;Sat: {{ content.business.hours.mon_sat }}<br>Sun: {{ content.business.hours.sun }}</p>
         </div>
       </div>
@@ -30,7 +30,7 @@
 
     <div class="contact__map" data-reveal-mask>
       <iframe
-        title="Studio location map"
+        title="Zewarish showroom location map"
         src="https://www.google.com/maps?q={{ content.business.map_lat }},{{ content.business.map_lng }}&z=15&output=embed"
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade">

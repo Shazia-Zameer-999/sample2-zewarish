@@ -31,14 +31,14 @@
 
     <section class="admin-panel">
       <div class="admin-panel__head">
-        <h2>Appointment Requests</h2>
+        <h2>Consultation Requests</h2>
         <a href="{{ url_for('main.admin_export', kind='appointments') }}">Export JSON</a>
       </div>
       <div class="admin-table-wrap">
         <table class="admin-table">
           <thead>
             <tr>
-              <th>Client</th><th>Service</th><th>Date</th><th>Stylist</th><th>Status</th><th>Notes</th>
+              <th>Client</th><th>Need</th><th>Date</th><th>Advisor</th><th>Status</th><th>Notes</th>
             </tr>
           </thead>
           <tbody>
@@ -60,7 +60,7 @@
               <td>{{ row.notes or "—" }}</td>
             </tr>
             {% else %}
-            <tr><td colspan="6" class="admin-empty">No appointment requests yet.</td></tr>
+            <tr><td colspan="6" class="admin-empty">No consultation requests yet.</td></tr>
             {% endfor %}
           </tbody>
         </table>

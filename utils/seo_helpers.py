@@ -10,7 +10,7 @@ import json
 def build_local_business_schema(business: dict, seo: dict, testimonials: dict) -> str:
     schema = {
         "@context": "https://schema.org",
-        "@type": seo.get("business_type", "BeautySalon"),
+        "@type": seo.get("business_type", "JewelryStore"),
         "name": business.get("name"),
         "image": seo.get("og_image"),
         "telephone": business.get("phone"),
@@ -37,14 +37,14 @@ def build_local_business_schema(business: dict, seo: dict, testimonials: dict) -
             {
                 "@type": "OpeningHoursSpecification",
                 "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-                "opens": "10:00",
-                "closes": "20:30",
+                "opens": "10:30",
+                "closes": "20:00",
             },
             {
                 "@type": "OpeningHoursSpecification",
                 "dayOfWeek": ["Sunday"],
-                "opens": "11:00",
-                "closes": "18:00",
+                "opens": "11:30",
+                "closes": "18:30",
             },
         ],
     }
