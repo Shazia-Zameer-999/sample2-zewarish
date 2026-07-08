@@ -1,16 +1,37 @@
 {% import "macros/ui.html" as ui %}
+
 <section class="team" id="team" data-section="team">
   <div class="container">
-    {{ ui.section_header(content.team.section.eyebrow, content.team.section.title, content.team.section.subtitle) }}
-    <div class="team__grid">
-      {% for m in content.team.members %}
-      <div class="team-card" data-reveal data-tilt>
-        <div class="swatch swatch--{{ m.swatch % 12 + 1 }} team-card__photo"><div class="swatch__sheen"></div></div>
-        <h4>{{ m.name }}</h4>
-        <span class="team-card__role">{{ m.role }}</span>
-        <p>{{ m.bio }}</p>
+
+    {{ ui.section_header(
+      content.team.section.eyebrow,
+      content.team.section.title,
+      content.team.section.subtitle
+    ) }}
+
+    {% set m = content.team.members[0] %}
+
+    <div class="founder-card" data-reveal>
+      <div class="founder-card__image">
+        <div class="swatch swatch--{{ m.swatch % 12 + 1 }} founder-card__photo">
+          <div class="swatch__sheen"></div>
+        </div>
       </div>
-      {% endfor %}
+
+      <div class="founder-card__content">
+        <span class="founder-card__label">Founder</span>
+
+        <h3>{{ m.name }}</h3>
+
+        <span class="founder-card__role">
+          {{ m.role }}
+        </span>
+
+        <p>
+          {{ m.bio }}
+        </p>
+      </div>
     </div>
+
   </div>
 </section>

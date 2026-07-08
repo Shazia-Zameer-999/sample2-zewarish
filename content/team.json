@@ -1,13 +1,15 @@
 {
   "section": {
     "eyebrow": "Meet the House",
-    "title": "The people behind the pieces.",
-    "subtitle": "A focused team guiding design, sourcing, styling, and aftercare."
+    "title": "The vision behind Zewarish.",
+    "subtitle": "Driven by a passion for timeless style, everyday elegance, and thoughtfully curated jewellery."
   },
   "members": [
-    { "name": "Aarav Mehra", "role": "Founder & Jewellery Curator", "bio": "Leads collection direction, bridal planning, and high-value consultations.", "swatch": 1 },
-    { "name": "Naina Kapoor", "role": "Diamond & Gemstone Advisor", "bio": "Guides stone selection, certification, clarity, colour, and setting choices.", "swatch": 2 },
-    { "name": "Rhea Malhotra", "role": "Bridal Jewellery Stylist", "bio": "Specialist in outfit matching, ceremony styling, and family gift coordination.", "swatch": 3 },
-    { "name": "Kabir Sethi", "role": "Aftercare & Repair Lead", "bio": "Handles polish refresh, resizing guidance, clasp checks, and restoration support.", "swatch": 4 }
+    {
+      "name": "Mahvish Siddiqui",
+      "role": "Founder & Curator",
+      "bio": "Mahvish carefully curates every Zewarish collection, selecting elegant anti-tarnish jewellery that blends timeless design, everyday comfort, and affordable luxury. Her vision is to make premium-looking jewellery accessible for every woman, every day.",
+      "swatch": 1
+    }
   ]
 }

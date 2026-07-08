@@ -45,27 +45,27 @@
   ],
   "why_choose": {
     "eyebrow": "Why Zewarish",
-    "title": "The details mass-market jewellery forgets.",
+    "title": "The details that make every piece special.",
     "cards": [
       {
         "icon": "gem",
-        "title": "Certified Purity",
-        "detail": "Transparent hallmarking, stone information, and purchase documentation on eligible pieces."
+        "title": "Premium Quality",
+        "detail": "Every piece is carefully selected to deliver lasting shine, comfort, and everyday elegance."
       },
       {
         "icon": "ruler-combined",
-        "title": "Comfort Fit",
-        "detail": "Every ring, bangle, chain, and bridal set is checked for sizing, weight, and wearability."
+        "title": "Perfect for Everyday Wear",
+        "detail": "Lightweight, comfortable designs created to complement your daily style as well as special occasions."
       },
       {
         "icon": "shield",
-        "title": "Secure Buying",
-        "detail": "Clear estimates, careful billing, and guided handover for high-value jewellery."
+        "title": "Trusted Shopping",
+        "detail": "Enjoy secure ordering, carefully packed deliveries, and reliable Pan India shipping with every purchase."
       },
       {
-        "icon": "sparkles",
-        "title": "Custom Finish",
-        "detail": "Choose polish tone, stone accents, engraving, and styling details for a piece that feels yours."
+        "icon": "wand-sparkles",
+        "title": "Anti-Tarnish Finish",
+        "detail": "Designed with an anti-tarnish finish so your favourite jewellery stays radiant and beautiful for longer."
       }
     ]
   },

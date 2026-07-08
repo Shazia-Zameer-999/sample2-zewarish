@@ -1,15 +1,33 @@
 {
   "section": {
     "eyebrow": "Questions",
-    "title": "Before you choose.",
-    "subtitle": "Can't find your answer here? Message us on WhatsApp."
+    "title": "Everything you need to know.",
+    "subtitle": "Can't find your answer here? Reach out to us on WhatsApp—we're always happy to help."
   },
   "questions": [
-    { "q": "Do you provide certificates for gold and diamond jewellery?", "a": "Yes. Eligible gold jewellery includes hallmarking details, and certified diamond or gemstone pieces include relevant grading or quality documentation." },
-    { "q": "How far in advance should I plan bridal jewellery?", "a": "We recommend starting 2-3 months before the wedding for custom sets, outfit matching, sizing, and family gifting coordination." },
-    { "q": "Can I customise an existing design?", "a": "Yes. We can adjust size, polish tone, stone accents, engraving, chain length, and selected design details depending on the piece." },
-    { "q": "Do you resize rings and bangles?", "a": "Most rings and selected bangles can be resized after inspection. Stone settings and design complexity can affect what is possible." },
-    { "q": "How is final pricing calculated?", "a": "Final pricing depends on live metal rates, weight, making charges, stone quality, certification, and custom work. We confirm estimates before purchase or production." },
-    { "q": "Do you offer jewellery cleaning and repair?", "a": "Yes. We offer cleaning, polish refresh, clasp checks, stone tightening, and repair guidance for eligible jewellery." }
+    {
+      "q": "Is your jewellery anti-tarnish?",
+      "a": "Yes. Our collection features premium anti-tarnish jewellery designed to retain its shine with proper care, making it perfect for everyday wear and special occasions."
+    },
+    {
+      "q": "Can I wear the jewellery every day?",
+      "a": "Absolutely. Our lightweight and comfortable designs are curated for everyday styling while also being elegant enough for parties, celebrations, and gifting."
+    },
+    {
+      "q": "Do you deliver across India?",
+      "a": "Yes. We offer secure Pan India shipping with carefully packed orders to ensure your jewellery arrives safely and beautifully presented."
+    },
+    {
+      "q": "How should I care for my jewellery?",
+      "a": "Store your jewellery in a dry place, avoid direct contact with perfumes, lotions, and harsh chemicals, and wipe it gently with a soft cloth after use to maintain its shine."
+    },
+    {
+      "q": "Is the jewellery suitable for gifting?",
+      "a": "Definitely. Our timeless collections make thoughtful gifts for birthdays, anniversaries, festivals, weddings, and other special occasions."
+    },
+    {
+      "q": "How can I place an order or ask a question?",
+      "a": "You can browse our collection on Instagram or contact us directly through WhatsApp or Instagram DM. We'll be happy to help you choose the perfect piece."
+    }
   ]
 }

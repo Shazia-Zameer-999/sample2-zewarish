@@ -95,18 +95,94 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ---------------- Testimonials swiper ---------------- */
-  if (window.Swiper) {
-    new Swiper(".testimonials__swiper", {
+  // if (window.Swiper) {
+  //   new Swiper(".testimonials__swiper", {
+  //     slidesPerView: 1,
+  //     spaceBetween: 24,
+  //     loop: true,
+  //     autoplay: { delay: 4500, disableOnInteraction: false },
+  //     pagination: { el: ".swiper-pagination", clickable: true },
+  //     navigation: { nextEl: ".testimonials__next", prevEl: ".testimonials__prev" },
+  //     breakpoints: {
+  //       768: { slidesPerView: 2 },
+  //       1100: { slidesPerView: 3 },
+  //     },
+  //   });
+  // }
+  /* ---------------- Testimonials Swiper ---------------- */
+if (window.Swiper) {
+  const swiperEl = document.querySelector(".testimonials__swiper");
+
+  if (swiperEl) {
+    const testimonialSwiper = new Swiper(swiperEl, {
       slidesPerView: 1,
-      spaceBetween: 24,
+      spaceBetween: 28,
+      speed: 700,
       loop: true,
-      autoplay: { delay: 4500, disableOnInteraction: false },
-      pagination: { el: ".swiper-pagination", clickable: true },
-      navigation: { nextEl: ".testimonials__next", prevEl: ".testimonials__prev" },
-      breakpoints: {
-        768: { slidesPerView: 2 },
-        1100: { slidesPerView: 3 },
+      grabCursor: true,
+      centeredSlides: false,
+      watchOverflow: true,
+      observer: true,
+      observeParents: true,
+      preloadImages: true,
+
+      autoplay: {
+        delay: 4500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true
       },
+
+      navigation: {
+        nextEl: swiperEl.querySelector(".testimonials__next"),
+        prevEl: swiperEl.querySelector(".testimonials__prev"),
+        disabledClass: "swiper-button-disabled"
+      },
+
+      pagination: {
+        el: swiperEl.querySelector(".swiper-pagination"),
+        clickable: true,
+        dynamicBullets: true
+      },
+
+      keyboard: {
+        enabled: true,
+        onlyInViewport: true
+      },
+
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 18
+        },
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 22
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 24
+        },
+        1100: {
+          slidesPerView: 3,
+          spaceBetween: 30
+        }
+      }
+    });
+
+    /* Extra robustness for navigation */
+    swiperEl.querySelector(".testimonials__next")?.addEventListener("click", (e) => {
+      e.preventDefault();
+      testimonialSwiper.slideNext();
+    });
+
+    swiperEl.querySelector(".testimonials__prev")?.addEventListener("click", (e) => {
+      e.preventDefault();
+      testimonialSwiper.slidePrev();
+    });
+
+    window.addEventListener("resize", () => {
+      testimonialSwiper.update();
     });
   }
+}
 });
