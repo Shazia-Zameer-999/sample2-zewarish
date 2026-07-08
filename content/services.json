@@ -1,0 +1,79 @@
+{
+  "section": {
+    "eyebrow": "What We Do",
+    "title": "Services, finished properly.",
+    "subtitle": "Every category below is delivered by a specialist \u2014 not a generalist stylist rotating stations."
+  },
+  "categories": [
+    {
+      "id": "hair",
+      "icon": "scissors",
+      "title": "Hair",
+      "summary": "Cuts, styling, and treatments built around your face shape and hair health.",
+      "services": ["Precision Haircut", "Blow-Dry & Styling", "Keratin Smoothening", "Hair Spa Therapy", "Global & Root Colouring", "Highlights & Balayage"]
+    },
+    {
+      "id": "skin",
+      "icon": "droplet",
+      "title": "Skin Care",
+      "summary": "Facials and therapy sessions tailored to Basti's climate and your skin type.",
+      "services": ["De-Tan Facial", "Hydra Facial", "Gold Radiance Facial", "Anti-Ageing Therapy", "Acne Clarifying Treatment", "Bridal Skin Prep Course"]
+    },
+    {
+      "id": "waxing",
+      "icon": "feather",
+      "title": "Waxing & Threading",
+      "summary": "Rica and chocolate wax systems with strictly single-use applicators.",
+      "services": ["Full Body Rica Wax", "Chocolate Wax", "Eyebrow Threading", "Upper Lip Threading", "Detan Waxing Combo"]
+    },
+    {
+      "id": "nails",
+      "icon": "hand",
+      "title": "Nail Care",
+      "summary": "Manicure, pedicure, and nail art finished to a photograph-ready sheen.",
+      "services": ["Classic Manicure", "Spa Pedicure", "Gel Polish", "Nail Extensions", "Bridal Nail Art"]
+    },
+    {
+      "id": "makeup",
+      "icon": "brush",
+      "title": "Makeup & Styling",
+      "summary": "HD and airbrush makeup for events, parties, and portrait days.",
+      "services": ["Party Makeup", "HD Makeup", "Airbrush Makeup", "Saree & Draping", "Hairdo & Updos"]
+    },
+    {
+      "id": "spa",
+      "icon": "leaf",
+      "title": "Body & Spa",
+      "summary": "Relaxation and prep therapies for the days before a big event.",
+      "services": ["Body Polishing", "Detan Body Wrap", "Head Massage Therapy", "Foot Reflexology"]
+    }
+  ],
+  "bridal": {
+    "eyebrow": "Bridal Studio",
+    "title": "Your wedding day, rehearsed.",
+    "subtitle": "Every bridal client gets a dedicated artist, a full trial sitting, and a fixed appointment window \u2014 no back-to-back bookings on the day.",
+    "packages": [
+      {
+        "name": "Signature Bridal",
+        "description": "HD makeup, hairdo, draping, and a pre-wedding trial sitting.",
+        "includes": ["HD Bridal Makeup", "Hairdo & Styling", "Saree/Lehenga Draping", "One Trial Sitting", "False Lashes & Touch-up Kit"],
+        "duration": "4\u20135 hrs",
+        "featured": false
+      },
+      {
+        "name": "Editorial Bridal",
+        "description": "Our most-booked package \u2014 airbrush finish with two trial sittings.",
+        "includes": ["Airbrush HD Makeup", "Hairdo & Styling", "Draping", "Two Trial Sittings", "Skin Prep Facial (1 session)", "On-site Touch-up (2 hrs)"],
+        "duration": "5\u20136 hrs",
+        "featured": true
+      },
+      {
+        "name": "Full Wedding Week",
+        "description": "Haldi, Mehendi, Sangeet, and Wedding-day looks, fully coordinated.",
+        "includes": ["4 Event Looks (Haldi/Mehendi/Sangeet/Wedding)", "Airbrush HD on Wedding Day", "Two Trial Sittings", "Full Skin Prep Course (3 sessions)", "Dedicated Artist for the Week"],
+        "duration": "Multi-day",
+        "featured": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "section": {
+    "eyebrow": "Portfolio",
+    "title": "A gallery, not a stock library.",
+    "subtitle": "Every swatch below represents a real finished look from our studio. Filter by category to browse."
+  },
+  "filters": ["All", "Bridal", "Hair", "Makeup", "Skin", "Nails"],
+  "photos": [
+    { "id": "g1", "category": "Bridal", "title": "Editorial Bridal \u2014 Airbrush Finish", "swatch": 1, "size": "tall" },
+    { "id": "g2", "category": "Hair", "title": "Balayage & Root Melt", "swatch": 2, "size": "wide" },
+    { "id": "g3", "category": "Makeup", "title": "HD Party Glam", "swatch": 3, "size": "square" },
+    { "id": "g4", "category": "Skin", "title": "Gold Radiance Facial Result", "swatch": 4, "size": "square" },
+    { "id": "g5", "category": "Bridal", "title": "Signature Bridal Draping", "swatch": 5, "size": "wide" },
+    { "id": "g6", "category": "Nails", "title": "Bridal Nail Art", "swatch": 6, "size": "square" },
+    { "id": "g7", "category": "Hair", "title": "Keratin Smoothening Result", "swatch": 7, "size": "tall" },
+    { "id": "g8", "category": "Makeup", "title": "Airbrush Reception Look", "swatch": 8, "size": "square" },
+    { "id": "g9", "category": "Bridal", "title": "Full Wedding Week \u2014 Sangeet Look", "swatch": 9, "size": "wide" },
+    { "id": "g10", "category": "Skin", "title": "De-Tan Facial Result", "swatch": 10, "size": "square" },
+    { "id": "g11", "category": "Hair", "title": "Hair Spa Therapy", "swatch": 11, "size": "square" },
+    { "id": "g12", "category": "Makeup", "title": "Engagement Day Makeup", "swatch": 12, "size": "tall" }
+  ],
+  "before_after": [
+    { "id": "ba1", "title": "Keratin Smoothening", "before_swatch": 13, "after_swatch": 7 },
+    { "id": "ba2", "title": "Gold Radiance Facial \u2014 4 Sessions", "before_swatch": 14, "after_swatch": 4 },
+    { "id": "ba3", "title": "Bridal Skin Prep Course", "before_swatch": 15, "after_swatch": 10 }
+  ]
+}

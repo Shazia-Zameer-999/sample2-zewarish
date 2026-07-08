@@ -1,0 +1,12 @@
+{
+  "section": {
+    "eyebrow": "Beauty Notes",
+    "title": "From the studio journal.",
+    "subtitle": "Short, practical notes from our stylists \u2014 not filler content."
+  },
+  "posts": [
+    { "id": "b1", "title": "How to Prep Your Skin 6 Weeks Before Your Wedding", "excerpt": "The realistic timeline our bridal clients follow, from facials to patch tests.", "category": "Bridal", "read_time": "4 min", "swatch": 3 },
+    { "id": "b2", "title": "Keratin vs. Nanoplastia: Which Suits Basti's Humidity?", "excerpt": "A stylist's honest comparison for frizz control in North Indian summers.", "category": "Hair", "read_time": "5 min", "swatch": 7 },
+    { "id": "b3", "title": "The Truth About 'Instant Glow' Facials", "excerpt": "What actually happens in a Gold Radiance Facial, and what to expect after.", "category": "Skin", "read_time": "3 min", "swatch": 10 }
+  ]
+}

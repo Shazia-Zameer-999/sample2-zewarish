@@ -1,0 +1,37 @@
+{
+  "section": {
+    "eyebrow": "Pricing",
+    "title": "Transparent, upfront pricing.",
+    "subtitle": "No hidden add-ons. Exact quotes are confirmed at consultation based on hair length and skin condition."
+  },
+  "plans": [
+    {
+      "name": "Essentials",
+      "price": "\u20b9799",
+      "period": "starting",
+      "description": "For quick, routine upkeep.",
+      "features": ["Haircut & Blow-Dry", "Eyebrow Threading", "Basic Manicure", "Upper Lip Threading"],
+      "cta": "Book Essentials",
+      "featured": false
+    },
+    {
+      "name": "Signature",
+      "price": "\u20b92,499",
+      "period": "starting",
+      "description": "Our most-booked monthly ritual.",
+      "features": ["Hair Spa Therapy", "Gold Radiance Facial", "Spa Pedicure", "Full Body Rica Wax", "Gel Polish Touch-up"],
+      "cta": "Book Signature",
+      "featured": true
+    },
+    {
+      "name": "Studio Elite",
+      "price": "\u20b95,999",
+      "period": "starting",
+      "description": "A full reset before a big event.",
+      "features": ["Keratin Smoothening", "Anti-Ageing Facial", "Body Polishing", "HD Party Makeup", "Bridal Nail Art"],
+      "cta": "Book Studio Elite",
+      "featured": false
+    }
+  ],
+  "note": "Bridal package pricing is quoted separately \u2014 see the Bridal Studio section above."
+}

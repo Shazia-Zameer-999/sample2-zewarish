@@ -1,0 +1,29 @@
+{
+  "name": "Fast Fashion Beauty Parlour",
+  "tagline": "Basti's Editorial Bridal & Beauty House",
+  "short_name": "Fast Fashion",
+  "founded_year": 2014,
+  "description": "A premium bridal and beauty studio in Basti, Uttar Pradesh, trusted by hundreds of brides for hair, skin, and bridal artistry finished to an editorial standard.",
+  "address": {
+    "line1": "Below UCO Bank",
+    "line2": "Near Hotel Prakash, Tiwari Tola",
+    "city": "Basti",
+    "state": "Uttar Pradesh",
+    "country": "India",
+    "pincode": "272001",
+    "full": "Below UCO Bank, Near Hotel Prakash, Tiwari Tola, Basti, Uttar Pradesh"
+  },
+  "phone": "+91 87650 71161",
+  "phone_display": "+91 87650 71161",
+  "whatsapp": "+918765071161",
+  "email": "hello@fastfashionbeauty.in",
+  "rating": 4.3,
+  "review_count": 339,
+  "hours": {
+    "mon_sat": "10:00 AM – 8:30 PM",
+    "sun": "11:00 AM – 6:00 PM"
+  },
+  "map_embed_query": "Fast Fashion Beauty Parlour, Tiwari Tola, Basti, Uttar Pradesh",
+  "map_lat": 26.7929,
+  "map_lng": 82.7328
+}

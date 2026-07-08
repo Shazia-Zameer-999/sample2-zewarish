@@ -1,0 +1,12 @@
+{
+  "section": {
+    "eyebrow": "Offers",
+    "title": "Seasonal, not permanent.",
+    "subtitle": "Genuine limited-window offers \u2014 updated monthly, never inflated then discounted."
+  },
+  "offers": [
+    { "id": "o1", "title": "Wedding Season Special", "detail": "20% off Editorial Bridal package for bookings made 60+ days in advance.", "tag": "Bridal", "expires": "Aug 31, 2026" },
+    { "id": "o2", "title": "Monsoon Hair Repair", "detail": "Free hair spa add-on with any keratin or colouring service.", "tag": "Hair", "expires": "Jul 31, 2026" },
+    { "id": "o3", "title": "Friend Referral Credit", "detail": "\u20b9500 studio credit for you and the friend you refer.", "tag": "Studio-wide", "expires": "Ongoing" }
+  ]
+}

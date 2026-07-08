@@ -1,0 +1,15 @@
+{
+  "section": {
+    "eyebrow": "Questions",
+    "title": "Before you book.",
+    "subtitle": "Can't find your answer here? Message us on WhatsApp."
+  },
+  "questions": [
+    { "q": "Do you require a trial sitting before bridal bookings?", "a": "Yes \u2014 every bridal package includes at least one trial sitting so the final look is agreed before your event date. Editorial Bridal and Full Wedding Week include two." },
+    { "q": "How far in advance should I book for wedding season?", "a": "We recommend booking bridal dates 2\u20133 months ahead during peak wedding season (Oct\u2013Feb), since we cap bridal bookings to one client per artist per day." },
+    { "q": "Do you use single-use applicators for waxing and threading?", "a": "Always. Every waxing and threading service uses sterilised tools and single-use applicators as standard practice, not an add-on." },
+    { "q": "Can I get a patch test before a facial or colouring service?", "a": "Yes, and we recommend it if you have sensitive skin or haven't used a product line with us before. Ask at consultation and we'll schedule it 24 hours ahead." },
+    { "q": "What's your cancellation policy for bridal packages?", "a": "Bridal bookings require a 30% advance to hold the date. Rescheduling is free with 7+ days' notice; cancellations within 7 days retain the advance as a studio credit." },
+    { "q": "Do you offer at-home or venue bridal service?", "a": "Yes, for Editorial Bridal and Full Wedding Week packages within Basti city limits. Travel charges apply beyond a 10km radius." }
+  ]
+}

@@ -1,0 +1,22 @@
+{% import "macros/ui.html" as ui %}
+<section class="instagram" id="instagram" data-section="instagram">
+  <div class="container">
+    {{ ui.section_header("Follow Along", "Straight from the studio floor.", "@fastfashionbeauty") }}
+  </div>
+  <div class="instagram__track-wrap">
+    <div class="instagram__track" id="instagramTrack">
+      {% for i in range(1, 9) %}
+      <a class="instagram__item swatch swatch--{{ i }}" href="{{ content.socials.instagram }}" target="_blank" rel="noopener">
+        <div class="swatch__sheen"></div>
+        <span class="instagram__icon"><i class="fa-brands fa-instagram"></i></span>
+      </a>
+      {% endfor %}
+      {% for i in range(1, 9) %}
+      <a class="instagram__item swatch swatch--{{ i }}" href="{{ content.socials.instagram }}" target="_blank" rel="noopener" aria-hidden="true">
+        <div class="swatch__sheen"></div>
+        <span class="instagram__icon"><i class="fa-brands fa-instagram"></i></span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

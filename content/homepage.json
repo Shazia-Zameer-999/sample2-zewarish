@@ -1,0 +1,51 @@
+{
+  "hero": {
+    "eyebrow": "Basti \u2014 Est. 2014",
+    "headline_lines": ["Beauty,", "tailored like", "a bridal thread."],
+    "subheadline": "An editorial-grade bridal & beauty studio where every appointment is finished with the precision of couture \u2014 not the speed of a salon chain.",
+    "primary_cta": "Book Your Appointment",
+    "primary_cta_target": "#book",
+    "secondary_cta": "See the Portfolio",
+    "secondary_cta_target": "#gallery",
+    "stat_badge_number": "339+",
+    "stat_badge_label": "five-star reviews",
+    "scroll_hint": "Scroll to explore"
+  },
+  "about": {
+    "eyebrow": "The Studio",
+    "title": "Not a salon. A studio practice.",
+    "body": "Fast Fashion Beauty Parlour was built on a simple belief: a bride, or anyone getting ready for a defining day, deserves the attention of a craftsperson, not a queue number. Tucked below UCO Bank near Hotel Prakash in Tiwari Tola, our studio has spent over a decade refining bridal artistry, skin therapy, and hair craft for Basti's most detail-oriented clients.",
+    "pull_quote": "We don't rush faces. We finish them.",
+    "signature_name": "Studio Fast Fashion",
+    "points": [
+      { "title": "Trained Artists", "detail": "Every stylist is certified in bridal HD makeup, keratin systems, and advanced skin therapy." },
+      { "title": "Premium Product Lines", "detail": "We work exclusively with dermat-approved and cruelty-free product houses." },
+      { "title": "One Bride, One Focus", "detail": "Bridal bookings are single-client per artist \u2014 no double-seating on your big day." }
+    ]
+  },
+  "stats": [
+    { "number": 339, "suffix": "+", "label": "Five-Star Reviews" },
+    { "number": 4.3, "suffix": "/5", "label": "Average Rating", "decimal": true },
+    { "number": 11, "suffix": "+", "label": "Years in Basti" },
+    { "number": 6200, "suffix": "+", "label": "Faces Styled" }
+  ],
+  "why_choose": {
+    "eyebrow": "Why Fast Fashion",
+    "title": "The details a rushed salon skips.",
+    "cards": [
+      { "icon": "gem", "title": "Editorial Finish", "detail": "Makeup and hair styled to photograph, not just to look good in the mirror." },
+      { "icon": "clock", "title": "On-Time, Every Time", "detail": "Appointment slots are padded so your service never gets compressed." },
+      { "icon": "shield", "title": "Hygiene First", "detail": "Single-use applicators, sterilised tools, and patch-tested products." },
+      { "icon": "sparkles", "title": "Trial Before Trust", "detail": "Every bridal package includes a full trial sitting before the wedding date." }
+    ]
+  },
+  "newsletter": {
+    "eyebrow": "Stay In Thread",
+    "title": "Seasonal offers, straight to your inbox.",
+    "body": "One email a month \u2014 new packages, festive offers, and bridal season slots before they go public.",
+    "placeholder": "Enter your email",
+    "cta": "Subscribe",
+    "success_message": "You're on the list \u2014 welcome to the thread.",
+    "privacy_note": "No spam. Unsubscribe anytime."
+  }
+}
