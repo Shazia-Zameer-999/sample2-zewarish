@@ -1,0 +1,23 @@
+{
+  "name": "primary",
+  "version": "1.0.0",
+  "description": "A single-page, cinematically animated Flask website for **Zewarish**, a fine jewellery brand focused on gold, diamonds, gemstones, bridal sets, custom keepsakes, gifting, and aftercare.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shazia-Zameer-999/sample2-zewarish.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shazia-Zameer-999/sample2-zewarish/issues"
+  },
+  "homepage": "https://github.com/Shazia-Zameer-999/sample2-zewarish#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
