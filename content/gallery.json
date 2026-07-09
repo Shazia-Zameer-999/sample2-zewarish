@@ -62,7 +62,7 @@
       "sku": "ZEV-EAR-006",
       "slug": "drop-hoop-earrings",
       "description": "Drop Hoop Earrings.",
-      "image": "/static/images/gallery/g6.jpg",
+      "image": "/static/images/gallery/g5.jpg",
       "swatch": 5,
       "size": "square"
     },
@@ -74,7 +74,7 @@
       "sku": "ZEV-NCK-007",
       "slug": "vintage-necklace",
       "description": "A bold, structured collar necklace with a brushed matte gold finish.",
-      "image": "/static/images/gallery/g7.jpg",
+      "image": "/static/images/gallery/g6.jpg",
       "swatch": 6,
       "size": "square"
     },
@@ -86,7 +86,7 @@
       "sku": "ZEV-NCK-008",
       "slug": "emerald-cut-signet-necklace",
       "description": "A vintage-inspired signet necklace featuring a striking emerald-cut green cubic zirconia.",
-      "image": "/static/images/gallery/g8.jpg",
+      "image": "/static/images/gallery/g7.jpg",
       "swatch": 7,
       "size": "wide"
     },
@@ -98,7 +98,7 @@
       "sku": "ZEV-EAR-009",
       "slug": "chunky-chain-link-earrings",
       "description": "A statement piece featuring interlocking thick gold chains, perfect for stacking.",
-      "image": "/static/images/gallery/g9.jpg",
+      "image": "/static/images/gallery/g8.jpg",
       "swatch": 8,
       "size": "tall"
     },
