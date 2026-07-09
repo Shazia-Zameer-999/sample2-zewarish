@@ -15,33 +15,30 @@
     <form class="booking__form" id="bookingForm" data-reveal novalidate>
       <div class="form-row">
         <div class="form-field">
-          <label for="bf-name">Full Name</label>
+          <label for="bf-name">Name</label>
           <input type="text" id="bf-name" name="name" required>
           <span class="form-error" data-error-for="name"></span>
         </div>
         <div class="form-field">
           <label for="bf-phone">Phone Number</label>
-          <input type="tel" id="bf-phone" name="phone" required>
+          <input type="tel" id="bf-phone" name="phone" >
           <span class="form-error" data-error-for="phone"></span>
         </div>
       </div>
 
       <div class="form-row">
         <div class="form-field">
-          <label for="bf-service">Service</label>
-          <select id="bf-service" name="service" required>
-            <option value="" disabled selected>Choose a jewellery need</option>
-            {% for cat in content.services.categories %}
-            <optgroup label="{{ cat.title }}">
-              {% for s in cat.services %}<option value="{{ s }}">{{ s }}</option>{% endfor %}
-            </optgroup>
-            {% endfor %}
-            <optgroup label="Bridal Jewellery">
-              {% for pkg in content.services.bridal.packages %}<option value="{{ pkg.name }}">{{ pkg.name }}</option>{% endfor %}
-            </optgroup>
-          </select>
-          <span class="form-error" data-error-for="service"></span>
-        </div>
+  <label for="bf-service">Category</label>
+  <select id="bf-service" name="service" required>
+    <option value="" disabled selected>Choose a jewellery need</option>
+    
+    {% for cat in content.services.categories %}
+      <option value="{{ cat.title }}">{{ cat.title }}</option>
+    {% endfor %}
+        
+  </select>
+  <span class="form-error" data-error-for="service"></span>
+</div>
         <div class="form-field">
           <label for="bf-stylist">Preferred Advisor</label>
           <select id="bf-stylist" name="stylist">

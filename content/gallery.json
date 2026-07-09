@@ -4,7 +4,7 @@
     "title": "A gallery of crafted keepsakes.",
     "subtitle": "Browse collection moods across gold, diamonds, bridal, gemstones, and gifting."
   },
-  "filters": ["Earrings", "Necklace", "Bracelet", "Rings"],
+  "filters": ["All", "Earrings", "Necklace", "Bracelet", "Rings"],
   "photos":[
   {
     "id": "g1",

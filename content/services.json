@@ -6,51 +6,36 @@
   },
   "categories": [
     {
-      "id": "gold",
-      "icon": "coins",
-      "title": "Gold Jewellery",
+      "id": "Earrings",
+      "icon": "Earrings",
+      "title": "Earrings",
       "summary": "Hallmarked everyday and occasion pieces in yellow, rose, and antique gold finishes.",
-      "services": ["Gold Chains", "Bangles & Kadas", "Earrings & Studs", "Mangalsutras", "Temple Jewellery", "Antique Gold Sets"]
+      "services": ["Earrings"]
     },
     {
-      "id": "diamonds",
-      "icon": "gem",
-      "title": "Diamond Jewellery",
+      "id": "Necklace",
+      "icon": "Necklace",
+      "title": "Necklace",
       "summary": "Certified diamond rings, bracelets, pendants, and statement pieces with clean contemporary settings.",
       "services": ["Solitaire Rings", "Diamond Bands", "Tennis Bracelets", "Diamond Pendants", "Daily-Wear Studs", "Cocktail Rings"]
     },
     {
-      "id": "gemstones",
-      "icon": "certificate",
-      "title": "Gemstone Pieces",
+      "id": "Rings",
+      "icon": "Rings",
+      "title": "Rings",
       "summary": "Emerald, ruby, sapphire, pearl, and kundan accents selected for tone, clarity, and character.",
       "services": ["Navratna Jewellery", "Emerald Sets", "Ruby Rings", "Pearl Strings", "Kundan Earrings", "Gemstone Pendants"]
     },
     {
-      "id": "custom",
-      "icon": "pen-ruler",
-      "title": "Custom Design",
+      "id": "Bracelet",
+      "icon": "Bracelet",
+      "title": "Bracelet",
       "summary": "Personalised jewellery designed around your story, budget, stone preference, and wearing style.",
       "services": ["Name Pendants", "Engraved Rings", "Bespoke Bridal Sets", "Heirloom Redesign", "Stone Sourcing", "CAD Design Preview"]
-    },
-    {
-      "id": "gifting",
-      "icon": "gift",
-      "title": "Gifting",
-      "summary": "Elegant gifts for birthdays, anniversaries, festivals, baby showers, and milestone moments.",
-      "services": ["Gift Pendants", "Charm Bracelets", "Silver Keepsakes", "Festive Gift Boxes", "Corporate Gifting", "Personalised Packaging"]
-    },
-    {
-      "id": "care",
-      "icon": "wand-magic-sparkles",
-      "title": "Care & Repair",
-      "summary": "Cleaning, polishing, resizing, clasp checks, stone tightening, and restoration guidance.",
-      "services": ["Jewellery Cleaning", "Ring Resizing", "Stone Resetting", "Clasp Repair", "Polish Refresh", "Old Gold Consultation"]
     }
   ],
   "bridal": {
     "eyebrow": "Bridal Jewellery",
-    "title": "Wedding jewellery, planned like a trousseau.",
     "subtitle": "From engagement rings to wedding-day sets and family gifts, each bridal consultation balances outfit, ceremony, budget, and heirloom value.",
     "packages": [
       {

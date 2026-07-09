@@ -3,14 +3,21 @@
   <div class="container">
     <div class="site-footer__grid">
       <div class="site-footer__brand">
-        <span class="site-footer__mark">ZW</span>
-        <h3>{{ content.business.name }}</h3>
+        <img class="site-footer__mark" src="/static/images/image.png" alt="">
+        <h3>{{ content.business.name }}.co</h3>
         <p>{{ content.business.tagline }}</p>
         <div class="site-footer__socials">
-          {% if content.socials.instagram %}<a href="{{ content.socials.instagram }}" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>{% endif %}
-          {% if content.socials.facebook %}<a href="{{ content.socials.facebook }}" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>{% endif %}
-          {% if content.socials.whatsapp %}<a href="{{ content.socials.whatsapp }}" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>{% endif %}
-          {% if content.socials.google_reviews %}<a href="{{ content.socials.google_reviews }}" target="_blank" rel="noopener" aria-label="Google Reviews"><i class="fa-brands fa-google"></i></a>{% endif %}
+          {% if content.socials.instagram %}<a
+            href="{{ content.socials.instagram }}"
+            target="_blank"
+            rel="noopener"
+            aria-label="Instagram"
+            ><i class="fa-brands fa-instagram"></i></a
+          >{% endif %} {% if content.socials.email %}<a
+            href="mailto:{{ content.socials.email }}"
+            aria-label="Email"
+            ><i class="fa-solid fa-envelope"></i></a
+          >{% endif %}
         </div>
       </div>
 
@@ -20,26 +27,15 @@
         <a href="{{ link.target }}" data-scroll-link>{{ link.label }}</a>
         {% endfor %}
       </div>
-
-      <div class="site-footer__col">
-        <h4>Showroom</h4>
-        <p>{{ content.business.address.line1 }}<br>{{ content.business.address.line2 }}<br>{{ content.business.address.city }}, {{ content.business.address.state }}</p>
-        <a href="tel:{{ content.business.phone | replace(' ', '') }}">{{ content.business.phone_display }}</a><br>
-        <a href="mailto:{{ content.business.email }}">{{ content.business.email }}</a>
-      </div>
-
-      <div class="site-footer__col">
-        <h4>Hours</h4>
-        <p>Mon&ndash;Sat: {{ content.business.hours.mon_sat }}<br>Sun: {{ content.business.hours.sun }}</p>
-        <div class="site-footer__rating">
-          <i class="fa-solid fa-star"></i> {{ content.business.rating }} &middot; {{ content.business.review_count }}+ reviews
-        </div>
-      </div>
     </div>
 
     <div class="site-footer__bottom">
-      <span>&copy; {{ content.business.founded_year }}&ndash;<span id="year"></span> {{ content.business.name }}. All rights reserved.</span>
-      <span class="site-footer__engine-note">Built on a reusable Flask website engine.</span>
+      <span
+        >&copy; {{ content.business.founded_year }}
+        {{ content.business.name }}. All rights reserved.</span>
+      <span class="site-footer__engine-note"
+        >Built with Love.</span
+      >
     </div>
   </div>
 </footer>
