@@ -1650,7 +1650,7 @@ height:28px;
   background: var(--bordeaux);
 }
 .gallery__item-save.is-saved i {
-  font-weight: 900; /* switches to solid-heart look via color */
+  font-weight: 900; 
   color: var(--gold-light);
 }
 
@@ -1663,8 +1663,8 @@ height:28px;
   text-transform: uppercase;
 }
 
-/* Always show price/save on touch devices since there's no hover */
-@media (hover: none) {
+/* Always show price/save on touch devices OR narrow screens so users can easily save without hovering */
+@media (max-width: 900px), (hover: none) {
   .gallery__item-price,
   .gallery__item-save {
     opacity: 1;
@@ -1849,6 +1849,7 @@ height:28px;
   border: none;
   color: #fff;
   font-size: 1.1rem;
+  cursor: pointer;
 }
 .lightbox__nav {
   position: absolute;
@@ -1861,6 +1862,8 @@ height:28px;
   border: none;
   color: #fff;
   font-size: 1.1rem;
+  z-index: 10;
+  cursor: pointer;
 }
 .lightbox__nav--prev {
   left: 2rem;
@@ -1868,9 +1871,18 @@ height:28px;
 .lightbox__nav--next {
   right: 2rem;
 }
+
 @media (max-width: 640px) {
   .lightbox__nav {
-    display: none;
+    width: 36px;
+    height: 36px;
+    font-size: 0.95rem;
+  }
+  .lightbox__nav--prev {
+    left: 0.5rem;
+  }
+  .lightbox__nav--next {
+    right: 0.5rem;
   }
 }
 
@@ -1880,7 +1892,7 @@ height:28px;
 .wishlist-toggle {
   position: fixed;
   right: 1.8rem;
-  bottom: 1.8rem;
+  bottom: 5.5rem; /* Increased from 1.8rem to clear the up arrow */
   z-index: 9000;
   width: 54px;
   height: 54px;
@@ -2065,7 +2077,7 @@ height:28px;
   }
   .wishlist-toggle {
     right: 1.2rem;
-    bottom: 1.2rem;
+    bottom: 4.8rem;
   }
 }
 /* ==========================================================================

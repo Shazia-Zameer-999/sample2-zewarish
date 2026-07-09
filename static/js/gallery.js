@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ---------------- Gallery filters ---------------- */
   const filterBtns = document.querySelectorAll(".gallery__filter-btn");
   const galleryItems = document.querySelectorAll(".gallery__item");
+  
   filterBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
       filterBtns.forEach((b) => b.classList.remove("is-active"));
@@ -25,8 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const lightboxPrice = document.getElementById("lightboxPrice");
   const lightboxSku = document.getElementById("lightboxSku");
   const lightboxDescription = document.getElementById("lightboxDescription");
-  const lightboxSaveBtn = document.getElementById("lightboxSaveBtn");
-
+  
   let visibleItems = [];
   let currentIndex = 0;
 
@@ -42,17 +42,16 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderLightbox() {
     const item = visibleItems[currentIndex];
     if (!item || !lightboxSwatch) return;
+    
     const swatchNum = item.dataset.lightboxSwatch;
     lightboxSwatch.className = "swatch lightbox__swatch swatch--" + (((parseInt(swatchNum) || 0) % 12) + 1);
     lightboxTitle.textContent = item.dataset.lightboxTitle || "";
     lightboxCategory.textContent = item.dataset.lightboxCategory || "";
 
-    // Product details
     if (lightboxPrice) lightboxPrice.textContent = item.dataset.price || "";
     if (lightboxSku) lightboxSku.textContent = item.dataset.sku ? "SKU " + item.dataset.sku : "";
     if (lightboxDescription) lightboxDescription.textContent = item.dataset.description || "";
 
-    // Product image
     if (lightboxImage && lightboxMedia) {
       const imgSrc = item.dataset.image || "";
       lightboxMedia.classList.remove("img-fallback");
@@ -65,41 +64,108 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // Reflect saved state on lightbox heart
+    // Dynamic state application for lightbox Save Button
+    const lightboxSaveBtn = document.getElementById("lightboxSaveBtn");
     if (lightboxSaveBtn) {
       const id = item.dataset.id;
       lightboxSaveBtn.classList.toggle("is-saved", isSaved(id));
-      lightboxSaveBtn.dataset.currentId = id || "";
+      lightboxSaveBtn.dataset.currentId = id || ""; 
     }
   }
 
-  // Fallback to swatch if the lightbox image fails to load (e.g. 404)
   lightboxImage?.addEventListener("error", () => {
     if (lightboxImage.getAttribute("src")) {
       lightboxMedia?.classList.add("img-fallback");
     }
   });
 
-  galleryItems.forEach((item) => {
-    item.addEventListener("click", () => openLightbox(item));
+  // ---- Global Event Delegation for ALL Wishlist Actions ----
+  // This approach is immune to DOM hydration, clones, or external UI scripts
+  document.body.addEventListener("click", (e) => {
+    
+    // 1. Grid Card Save Event
+    const gridSaveBtn = e.target.closest("[data-save-btn]");
+    if (gridSaveBtn) {
+      // Ensure we are inside the gallery grid
+      const galleryGrid = document.getElementById("galleryGrid");
+      if (!galleryGrid || !galleryGrid.contains(gridSaveBtn)) return;
+      
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const item = gridSaveBtn.closest(".gallery__item");
+      const id = item?.dataset.id;
+      if (!id) return;
+
+      const nowSaved = toggleWishlist(id);
+      gridSaveBtn.classList.toggle("is-saved", nowSaved);
+      
+      // Keep lightbox heart synced if it's currently open
+      const lightboxSaveBtn = document.getElementById("lightboxSaveBtn");
+      if (lightboxSaveBtn && lightboxSaveBtn.dataset.currentId === id) {
+        lightboxSaveBtn.classList.toggle("is-saved", nowSaved);
+      }
+      
+      showToast(nowSaved ? "♡ Added to your wishlist" : "Removed from wishlist");
+      updateWishlistCount();
+      return;
+    }
+
+    // 2. Lightbox Save Event
+    const lightboxSaveBtnClick = e.target.closest("#lightboxSaveBtn");
+    if (lightboxSaveBtnClick) {
+      e.preventDefault();
+      const id = lightboxSaveBtnClick.dataset.currentId;
+      if (!id) {
+        console.error("[Zeverish Debug] Lightbox save clicked, but no dataset ID found.");
+        return;
+      }
+      
+      const nowSaved = toggleWishlist(id);
+      lightboxSaveBtnClick.classList.toggle("is-saved", nowSaved);
+
+      // Keep underlying grid card synced
+      const cardBtn = document.querySelector(`.gallery__item[data-id="${id}"] [data-save-btn]`);
+      if (cardBtn) cardBtn.classList.toggle("is-saved", nowSaved);
+
+      showToast(nowSaved ? "♡ Added to your wishlist" : "Removed from wishlist");
+      updateWishlistCount();
+      return;
+    }
+    
+    // 3. Grid Card Open Lightbox Event
+    const itemClick = e.target.closest(".gallery__item");
+    if (itemClick) {
+      const galleryGrid = document.getElementById("galleryGrid");
+      // Ignore clicks if they originated from the wishlist drawer or weren't in the main grid
+      if (galleryGrid && galleryGrid.contains(itemClick)) {
+        openLightbox(itemClick);
+      }
+    }
   });
 
+
+  /* ---------------- Lightbox Navigation & Close ---------------- */
   function closeLightbox() {
     lightbox?.classList.remove("is-open");
     document.body.classList.remove("lightbox-open");
   }
+  
   document.getElementById("lightboxClose")?.addEventListener("click", closeLightbox);
   lightbox?.addEventListener("click", (e) => { if (e.target === lightbox) closeLightbox(); });
+  
   document.getElementById("lightboxNext")?.addEventListener("click", () => {
     if (!visibleItems.length) return;
     currentIndex = (currentIndex + 1) % visibleItems.length;
     renderLightbox();
   });
+  
   document.getElementById("lightboxPrev")?.addEventListener("click", () => {
     if (!visibleItems.length) return;
     currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
     renderLightbox();
   });
+  
   document.addEventListener("keydown", (e) => {
     if (!lightbox?.classList.contains("is-open")) return;
     if (e.key === "Escape") closeLightbox();
@@ -107,77 +173,73 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "ArrowLeft") document.getElementById("lightboxPrev")?.click();
   });
 
-  // Swipe support — the prev/next arrow buttons are hidden below 640px
-  // (see gallery.css), so mobile users need a touch gesture instead.
   let touchStartX = 0;
   lightbox?.addEventListener("touchstart", (e) => {
     touchStartX = e.changedTouches[0].clientX;
   }, { passive: true });
+  
   lightbox?.addEventListener("touchend", (e) => {
     const dx = e.changedTouches[0].clientX - touchStartX;
-    if (Math.abs(dx) < 40) return; // ignore small taps/jitter
+    if (Math.abs(dx) < 40) return; 
     if (dx < 0) document.getElementById("lightboxNext")?.click();
     else document.getElementById("lightboxPrev")?.click();
   }, { passive: true });
 
-  /* ---------------- Wishlist (localStorage) ---------------- */
+  /* ---------------- Wishlist (localStorage) Core ---------------- */
   const WISHLIST_KEY = "zeverish_wishlist";
 
   function getWishlist() {
     try {
-      return JSON.parse(localStorage.getItem(WISHLIST_KEY)) || [];
+      const stored = JSON.parse(localStorage.getItem(WISHLIST_KEY));
+      return (Array.isArray(stored) ? stored : []).map(String);
     } catch {
       return [];
     }
   }
+  
   function isSaved(id) {
-    return getWishlist().includes(id);
+    if (!id) return false;
+    return getWishlist().includes(String(id));
   }
+  
   function toggleWishlist(id) {
+    if (!id) return false;
+    const strId = String(id);
     let list = getWishlist();
-    if (list.includes(id)) {
-      list = list.filter((x) => x !== id);
+    
+    if (list.includes(strId)) {
+      list = list.filter((x) => x !== strId);
     } else {
-      list.push(id);
+      list.push(strId);
     }
-    localStorage.setItem(WISHLIST_KEY, JSON.stringify(list));
-    return list.includes(id);
+    
+    try {
+      localStorage.setItem(WISHLIST_KEY, JSON.stringify(list));
+      console.log(`[Storage Debug] Saved successfully:`, list);
+    } catch (e) {
+      console.error("[Storage Debug] Write failed, check browser permissions:", e);
+    }
+    return list.includes(strId);
   }
 
-  // Restore saved state on gallery cards after page load
-  galleryItems.forEach((item) => {
-    const id = item.dataset.id;
-    const btn = item.querySelector("[data-save-btn]");
-    if (btn && isSaved(id)) btn.classList.add("is-saved");
-
-    btn?.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.stopPropagation(); // don't open the lightbox
-      const nowSaved = toggleWishlist(id);
-      btn.classList.toggle("is-saved", nowSaved);
-      if (lightboxSaveBtn && lightboxSaveBtn.dataset.currentId === id) {
-        lightboxSaveBtn.classList.toggle("is-saved", nowSaved);
-      }
-      showToast(nowSaved ? "♡ Added to your wishlist" : "Removed from wishlist");
-      updateWishlistCount();
+  function refreshSavedState() {
+    document.querySelectorAll(".gallery__item").forEach((item) => {
+      const id = item.dataset.id;
+      if (!id) return;
+      const btn = item.querySelector("[data-save-btn]");
+      if (btn) btn.classList.toggle("is-saved", isSaved(id));
     });
-  });
+  }
+  
+  refreshSavedState();
 
-  // Save button inside the lightbox
-  lightboxSaveBtn?.addEventListener("click", (e) => {
-    e.preventDefault();
-    const id = lightboxSaveBtn.dataset.currentId;
-    if (!id) return;
-    const nowSaved = toggleWishlist(id);
-    lightboxSaveBtn.classList.toggle("is-saved", nowSaved);
-
-    // keep the matching grid card in sync
-    const cardBtn = document.querySelector(`.gallery__item[data-id="${id}"] [data-save-btn]`);
-    cardBtn?.classList.toggle("is-saved", nowSaved);
-
-    showToast(nowSaved ? "♡ Added to your wishlist" : "Removed from wishlist");
-    updateWishlistCount();
-  });
+  const galleryGrid = document.getElementById("galleryGrid");
+  if (galleryGrid) {
+    new MutationObserver(refreshSavedState).observe(galleryGrid, {
+      childList: true,
+      subtree: true,
+    });
+  }
 
   /* ---------------- Toast ---------------- */
   let toastTimer = null;
@@ -192,29 +254,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ---------------- Order on Instagram ---------------- */
   function buildOrderMessage(item) {
-    return `Hi Zeverish,
-
-I would like to order this jewellery.
-
-Product: ${item.dataset.name || ""}
-SKU: ${item.dataset.sku || ""}
-Price: ₹${item.dataset.price || ""}
-Product Link: https://zeverish.com/product/${item.dataset.slug || ""}
-
-Please let me know the availability.`;
+    return `Hi Zeverish,\n\nI would like to order this jewellery.\n\nProduct: ${item.dataset.name || ""}\nSKU: ${item.dataset.sku || ""}\nPrice: ₹${item.dataset.price || ""}\nProduct Link: https://zeverish.com/product/${item.dataset.slug || ""}\n\nPlease let me know the availability.`;
   }
 
   async function orderOnInstagram(item) {
     if (!item) return;
     const message = buildOrderMessage(item);
-
     try {
       await navigator.clipboard.writeText(message);
       showToast("✓ Product details copied.<br>Simply paste them into Instagram.");
     } catch {
       showToast("Couldn't copy automatically — please note the product details manually.");
     }
-
     const igUser = document.getElementById("lightbox")?.dataset.instagramUser || "zeverish_official";
     window.open(`https://ig.me/m/${igUser}`, "_blank", "noopener");
   }
@@ -238,7 +289,7 @@ Please let me know the availability.`;
     wishlistCount.classList.toggle("is-empty", count === 0);
   }
 
-  function renderWishlistDrawer() {
+function renderWishlistDrawer() {
     if (!wishlistBody) return;
     const ids = getWishlist();
 
@@ -255,17 +306,20 @@ Please let me know the availability.`;
       .map((id) => document.querySelector(`.gallery__item[data-id="${id}"]`))
       .filter(Boolean)
       .map((item) => {
-        const swatchNum = item.dataset.lightboxSwatch;
-        const swatchClass = "swatch--" + (((parseInt(swatchNum) || 0) % 12) + 1);
+        // Fetch the image source from the dataset
+        const imgSrc = item.dataset.image || "";
+        
         return `
           <div class="wishlist-card" data-id="${item.dataset.id}">
-            <div class="wishlist-card__swatch swatch ${swatchClass}"><div class="swatch__sheen"></div></div>
+            <div class="wishlist-card__swatch">
+              <img src="${imgSrc}" alt="${item.dataset.name || ""}" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
+            </div>
             <div class="wishlist-card__info">
               <span class="wishlist-card__cat">${item.dataset.category || ""}</span>
               <p class="wishlist-card__name">${item.dataset.name || ""}</p>
               <span class="wishlist-card__price">${item.dataset.price || ""}</span>
               <div class="wishlist-card__actions">
-                <button class="wishlist-card__order" data-drawer-order>Order on Instagram</button>
+                <button class="wishlist-card__order" data-drawer-order>Order</button>
                 <button class="wishlist-card__remove" data-drawer-remove>Remove</button>
               </div>
             </div>
@@ -280,6 +334,7 @@ Please let me know the availability.`;
     wishlistDrawer?.classList.add("is-open");
     wishlistOverlay?.classList.add("is-open");
   }
+  
   function closeWishlistDrawer() {
     wishlistDrawer?.classList.remove("is-open");
     wishlistOverlay?.classList.remove("is-open");
@@ -296,8 +351,12 @@ Please let me know the availability.`;
 
     if (e.target.closest("[data-drawer-remove]")) {
       toggleWishlist(id);
-      document.querySelector(`.gallery__item[data-id="${id}"] [data-save-btn]`)?.classList.remove("is-saved");
+      const gridBtn = document.querySelector(`.gallery__item[data-id="${id}"] [data-save-btn]`);
+      if (gridBtn) gridBtn.classList.remove("is-saved");
+      
+      const lightboxSaveBtn = document.getElementById("lightboxSaveBtn");
       if (lightboxSaveBtn?.dataset.currentId === id) lightboxSaveBtn.classList.remove("is-saved");
+      
       renderWishlistDrawer();
       updateWishlistCount();
       showToast("Removed from wishlist");
@@ -327,7 +386,6 @@ Please let me know the availability.`;
     frame.addEventListener("mousedown", (e) => { dragging = true; setPosition(e.clientX); });
     window.addEventListener("mousemove", (e) => { if (dragging) setPosition(e.clientX); });
     window.addEventListener("mouseup", () => (dragging = false));
-
     frame.addEventListener("touchstart", (e) => { dragging = true; setPosition(e.touches[0].clientX); }, { passive: true });
     frame.addEventListener("touchmove", (e) => { if (dragging) setPosition(e.touches[0].clientX); }, { passive: true });
     frame.addEventListener("touchend", () => (dragging = false));
@@ -336,7 +394,6 @@ Please let me know the availability.`;
   /* ---------------- Testimonials Swiper ---------------- */
   if (window.Swiper) {
     const swiperEl = document.querySelector(".testimonials__swiper");
-
     if (swiperEl) {
       const testimonialSwiper = new Swiper(swiperEl, {
         slidesPerView: 1,
@@ -368,7 +425,6 @@ Please let me know the availability.`;
           1100: { slidesPerView: 3, spaceBetween: 30 }
         }
       });
-
       swiperEl.querySelector(".testimonials__next")?.addEventListener("click", (e) => {
         e.preventDefault();
         testimonialSwiper.slideNext();
