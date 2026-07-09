@@ -5,36 +5,56 @@
     "subtitle": "Browse collection moods across gold, diamonds, bridal, gemstones, and gifting."
   },
   "filters": ["All", "Earrings", "Necklace", "Bracelet", "Rings"],
-  "photos":[
-  {
-    "id": "g1",
-    "category": "Earrings",
-    "title": "Elegant Everyday Statement Earrings",
-    "swatch": 1,
-    "size": "tall"
-  },
-  {
-    "id": "g2",
-    "category": "Necklace",
-    "title": "Timeless Layered Necklace Collection",
-    "swatch": 2,
-    "size": "wide"
-  },
-  {
-    "id": "g3",
-    "category": "Bracelet",
-    "title": "Minimal Anti-Tarnish Bracelet Stack",
-    "swatch": 3,
-    "size": "square"
-  },
-  {
-    "id": "g4",
-    "category": "Rings",
-    "title": "Classic Everyday Ring Collection",
-    "swatch": 4,
-    "size": "square"
-  }
-],
+  "photos": [
+    {
+      "id": "g1",
+      "name": "Elegant Everyday Statement Earrings",
+      "category": "Earrings",
+      "price": 4999,
+      "sku": "ZEV-EAR-001",
+      "slug": "elegant-everyday-statement-earrings",
+      "description": "Lightweight gold-tone drop earrings designed for effortless everyday elegance.",
+      "image": "/static/images/gallery/g1.jpg",
+      "swatch": 1,
+      "size": "tall"
+    },
+    {
+      "id": "g2",
+      "name": "Timeless Layered Necklace Collection",
+      "category": "Necklace",
+      "price": 7499,
+      "sku": "ZEV-NCK-002",
+      "slug": "timeless-layered-necklace-collection",
+      "description": "A curated set of delicate layered chains that pair beautifully alone or stacked.",
+      "image": "/static/images/gallery/g2.jpg",
+      "swatch": 2,
+      "size": "wide"
+    },
+    {
+      "id": "g3",
+      "name": "Minimal Anti-Tarnish Bracelet Stack",
+      "category": "Bracelet",
+      "price": 3299,
+      "sku": "ZEV-BRC-003",
+      "slug": "minimal-anti-tarnish-bracelet-stack",
+      "description": "Anti-tarnish plated bracelets crafted for daily wear without losing their shine.",
+      "image": "/static/images/gallery/g3.jpg",
+      "swatch": 3,
+      "size": "square"
+    },
+    {
+      "id": "g4",
+      "name": "Classic Everyday Ring Collection",
+      "category": "Rings",
+      "price": 2999,
+      "sku": "ZEV-RNG-004",
+      "slug": "classic-everyday-ring-collection",
+      "description": "Understated rings with a refined finish, made to be worn every day.",
+      "image": "/static/images/gallery/g4.jpg",
+      "swatch": 4,
+      "size": "square"
+    }
+  ],
   "before_after": [
     { "id": "ba1", "title": "Heirloom Redesign", "before_swatch": 13, "after_swatch": 7 },
     { "id": "ba2", "title": "Polish Refresh & Stone Check", "before_swatch": 14, "after_swatch": 4 },

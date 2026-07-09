@@ -1545,6 +1545,248 @@ height:28px;
   color: #fff;
 }
 
+/* ==========================================================================
+   Product Image Handling (card + lightbox)
+   ========================================================================== */
+.gallery__item-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.gallery__item-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  transition: transform 0.6s var(--ease);
+}
+.gallery__item:hover .gallery__item-img {
+  transform: scale(1.08);
+}
+/* If the image fails to load, hide it and fall back to the color swatch */
+.gallery__item-media.img-fallback .gallery__item-img {
+  display: none;
+}
+.gallery__item-media:not(.img-fallback) .swatch {
+  display: none;
+}
+
+.lightbox__media {
+  position: relative;
+  transform: scale(0.9);
+  transition: transform 0.4s var(--ease);
+}
+.lightbox.is-open .lightbox__media {
+  transform: scale(1);
+}
+.lightbox__img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lift);
+  display: block;
+}
+.lightbox__media.img-fallback .lightbox__img {
+  display: none;
+}
+.lightbox__media:not(.img-fallback) .lightbox__swatch {
+  display: none;
+}
+
+/* ==========================================================================
+   Product Card Enhancements
+   ========================================================================== */
+.gallery__item-price {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 3;
+  padding: 0.4rem 0.9rem;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(6px);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  transition: transform 0.35s var(--ease), background 0.35s var(--ease);
+}
+.gallery__item:hover .gallery__item-price {
+  background: var(--bordeaux);
+  color: var(--ivory);
+  transform: translateY(-2px);
+}
+
+.gallery__item-save {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 3;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease), background 0.3s var(--ease);
+  cursor: pointer;
+}
+.gallery__item:hover .gallery__item-save {
+  opacity: 1;
+  transform: scale(1);
+}
+.gallery__item-save.is-saved {
+  opacity: 1;
+  background: var(--bordeaux);
+}
+.gallery__item-save.is-saved i {
+  font-weight: 900; /* switches to solid-heart look via color */
+  color: var(--gold-light);
+}
+
+.gallery__item-sku {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+}
+
+/* Always show price/save on touch devices since there's no hover */
+@media (hover: none) {
+  .gallery__item-price,
+  .gallery__item-save {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ==========================================================================
+   Lightbox Enhancements
+   ========================================================================== */
+.lightbox__price {
+  margin-top: 1rem;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--gold-light);
+}
+.lightbox__price::before {
+  content: "₹";
+  opacity: 0.85;
+  margin-right: 2px;
+}
+
+.lightbox__sku {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.lightbox__description {
+  max-width: 480px;
+  margin: 0.9rem auto 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+}
+.lightbox__description:empty {
+  display: none;
+}
+
+.lightbox__actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.8rem;
+  flex-wrap: wrap;
+}
+
+.lightbox__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.6rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s var(--ease);
+}
+.lightbox__btn--save:hover,
+.lightbox__btn--save.is-saved {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.lightbox__btn--save.is-saved i {
+  color: var(--gold-light);
+}
+
+.lightbox__btn--order {
+  background: linear-gradient(135deg, #d62976, #962fbf, #4f5bd5);
+  border: none;
+  box-shadow: 0 6px 18px rgba(150, 47, 191, 0.35);
+}
+.lightbox__btn--order:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(150, 47, 191, 0.45);
+}
+
+@media (max-width: 640px) {
+  .lightbox__actions {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 1rem;
+  }
+  .lightbox__btn {
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   Toast Notification
+   ========================================================================== */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 2rem;
+  transform: translate(-50%, 20px);
+  z-index: 10000;
+  background: var(--ink);
+  color: #fff;
+  padding: 0.9rem 1.4rem;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  text-align: center;
+  box-shadow: var(--shadow-lift);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s var(--ease), transform 0.35s var(--ease);
+  max-width: 90%;
+}
+.toast.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
 @media (max-width: 900px) {
   .gallery__grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1581,11 +1823,6 @@ height:28px;
   aspect-ratio: 4/3;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lift);
-  transform: scale(0.9);
-  transition: transform 0.4s var(--ease);
-}
-.lightbox.is-open .lightbox__swatch {
-  transform: scale(1);
 }
 .lightbox__info {
   margin-top: 1.3rem;
@@ -1637,6 +1874,200 @@ height:28px;
   }
 }
 
+/* ==========================================================================
+   Wishlist Toggle + Drawer
+   ========================================================================== */
+.wishlist-toggle {
+  position: fixed;
+  right: 1.8rem;
+  bottom: 1.8rem;
+  z-index: 9000;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: none;
+  background: var(--bordeaux);
+  color: var(--ivory);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lift);
+  cursor: pointer;
+  transition: transform 0.3s var(--ease);
+}
+.wishlist-toggle:hover {
+  transform: translateY(-3px);
+}
+.wishlist-toggle__count {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border-radius: var(--radius-pill);
+  background: var(--gold-light);
+  color: var(--ink);
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+.wishlist-toggle__count.is-empty {
+  display: none;
+}
+
+.wishlist-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9700;
+  background: rgba(15, 6, 8, 0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s var(--ease);
+}
+.wishlist-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.wishlist-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9800;
+  width: 380px;
+  max-width: 90vw;
+  height: 100%;
+  background: var(--ivory, #fdfaf6);
+  box-shadow: -12px 0 40px rgba(0, 0, 0, 0.25);
+  transform: translateX(100%);
+  transition: transform 0.4s var(--ease);
+  display: flex;
+  flex-direction: column;
+}
+.wishlist-drawer.is-open {
+  transform: translateX(0);
+}
+.wishlist-drawer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 1.5rem;
+  border-bottom: 1px solid rgba(42, 15, 22, 0.1);
+}
+.wishlist-drawer__header h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--ink);
+}
+.wishlist-drawer__close {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(42, 15, 22, 0.06);
+  color: var(--ink);
+  cursor: pointer;
+}
+.wishlist-drawer__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem 1.5rem 1.5rem;
+}
+
+.wishlist-drawer__empty {
+  text-align: center;
+  margin-top: 3rem;
+  color: rgba(42, 15, 22, 0.5);
+  font-size: 0.9rem;
+}
+.wishlist-drawer__empty i {
+  display: block;
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+  color: rgba(42, 15, 22, 0.25);
+}
+
+.wishlist-card {
+  display: flex;
+  gap: 0.9rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba(42, 15, 22, 0.08);
+}
+.wishlist-card__swatch {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.wishlist-card__info {
+  flex: 1;
+  min-width: 0;
+}
+.wishlist-card__cat {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--bordeaux);
+}
+.wishlist-card__name {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  color: var(--ink);
+  margin: 0.15rem 0 0.3rem;
+  line-height: 1.3;
+}
+.wishlist-card__price {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+.wishlist-card__price::before {
+  content: "₹";
+  opacity: 0.8;
+}
+.wishlist-card__actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.wishlist-card__actions button {
+  border: none;
+  background: none;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  padding: 0;
+}
+.wishlist-card__remove {
+  color: rgba(42, 15, 22, 0.45);
+}
+.wishlist-card__remove:hover {
+  color: var(--bordeaux);
+}
+.wishlist-card__order {
+  color: var(--bordeaux);
+}
+.wishlist-card__order:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .wishlist-drawer {
+    width: 100%;
+  }
+  .wishlist-toggle {
+    right: 1.2rem;
+    bottom: 1.2rem;
+  }
+}
 /* ==========================================================================
    Before / After slider
    ========================================================================== */
