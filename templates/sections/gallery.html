@@ -37,7 +37,11 @@
             src="{{ item.image|default('') }}"
             alt="{{ item.name }}"
             class="gallery__item-img"
-            onerror="this.closest('.gallery__item-media').classList.add('img-fallback')"
+            loading="lazy"
+            decoding="async"
+            onerror="
+              this.closest('.gallery__item-media').classList.add('img-fallback')
+            "
           />
           <div class="swatch swatch--{{ (item.swatch|default(0)) % 12 + 1 }}">
             <div class="swatch__sheen"></div>
@@ -66,7 +70,11 @@
       </figure>
       {% endfor %}
     </div>
-    <div class="gallery__actions" id="galleryActions" style="text-align: center; margin-top: 3rem;">
+    <div
+      class="gallery__actions"
+      id="galleryActions"
+      style="text-align: center; margin-top: 3rem"
+    >
       <button class="btn-load-more" id="loadMoreBtn" type="button">
         Load More Pieces
       </button>
@@ -74,7 +82,11 @@
   </div>
 </section>
 
-<button class="wishlist-toggle" id="wishlistToggle" aria-label="View saved items">
+<button
+  class="wishlist-toggle"
+  id="wishlistToggle"
+  aria-label="View saved items"
+>
   <i class="fa-solid fa-heart"></i>
   <span class="wishlist-toggle__count" id="wishlistCount">0</span>
 </button>
@@ -82,7 +94,13 @@
 <div class="wishlist-drawer" id="wishlistDrawer">
   <div class="wishlist-drawer__header">
     <h3>Saved Pieces</h3>
-    <button class="wishlist-drawer__close" id="wishlistClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <button
+      class="wishlist-drawer__close"
+      id="wishlistClose"
+      aria-label="Close"
+    >
+      <i class="fa-solid fa-xmark"></i>
+    </button>
   </div>
   <div class="wishlist-drawer__body" id="wishlistBody"></div>
 </div>
@@ -134,7 +152,10 @@
         id="lightboxOrderBtn"
         type="button"
       >
-        <a href="https://www.instagram.com/direct/t/18067487024313489/"><i class="fa-brands fa-instagram"></i> <span>Order on Instagram</span></a>
+        <a href="https://www.instagram.com/direct/t/18067487024313489/"
+          ><i class="fa-brands fa-instagram"></i>
+          <span>Order on Instagram</span></a
+        >
       </button>
     </div>
   </div>
