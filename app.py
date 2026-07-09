@@ -1,10 +1,19 @@
 import logging
 import os
+from dotenv import load_dotenv
+
+load_dotenv()  # add this before anything reads os.environ
 
 from flask import Flask
-
 from config import CONFIG_MAP
 from blueprints.main import main_bp
+import resend
+from flask import request, redirect, url_for, flash, jsonify
+import html
+
+resend.api_key = os.environ.get("RESEND_API_KEY")
+print("Resend API Key:", resend.api_key)  # should now print the real key
+print("Resend API Key:", resend.api_key)  # Debugging line to check if the API key is set
 
 
 def create_app():
@@ -26,6 +35,50 @@ def create_app():
         app.logger.exception("Server error")
         return "Something went wrong. Please try again shortly.", 500
 
+    @app.route("/contact", methods=["POST"])
+    def contact():
+        data = request.get_json(silent=True) or {}
+
+        name = data.get("name", "").strip()
+        email = data.get("email", "").strip()
+        phone = data.get("phone", "").strip()
+        category = data.get("service", "").strip()
+        message = data.get("notes", "").strip()
+
+        if not name:
+            return jsonify({"ok": False, "message": "Name is required."}), 400
+
+        # Escape user input before dropping it into HTML email
+        safe_name = html.escape(name)
+        safe_email = html.escape(email) if email else "Not provided"
+        safe_phone = html.escape(phone) if phone else "Not provided"
+        safe_category = html.escape(category) if category else "Not specified"
+        safe_message = html.escape(message).replace("\n", "<br>") if message else "No message"
+
+        html_body = f"""
+        <h2>New Jewellery Enquiry</h2>
+        <p><strong>Name:</strong> {safe_name}</p>
+        <p><strong>Email:</strong> {safe_email}</p>
+        <p><strong>Phone:</strong> {safe_phone}</p>
+        <p><strong>Category:</strong> {safe_category}</p>
+        <p><strong>Message:</strong><br>{safe_message}</p>
+        """
+
+        try:
+            params = {
+                "from": "Website Contact <onboarding@resend.dev>",
+                "to": ["zewarishhh@gmail.com"],
+                "subject": f"New Enquiry from {name}",
+                "html": html_body,
+            }
+            if email:
+                params["reply_to"] = email
+
+            resend.Emails.send(params)
+            return jsonify({"ok": True, "message": "Thanks! We'll be in touch soon."})
+        except Exception as e:
+            print("Resend error:", e)
+            return jsonify({"ok": False, "message": "Something went wrong. Please try again."}), 500
     return app
 
 

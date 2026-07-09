@@ -2668,6 +2668,8 @@ line-height:1.75;
 .booking {
   background: linear-gradient(180deg, var(--ivory), #f6e9e2);
   position: relative;
+  /* Added: Fluid padding so it breathes correctly on all devices */
+  padding: clamp(4rem, 8vw, 6rem) 0;
 }
 .booking__thread {
   position: absolute;
@@ -2680,59 +2682,74 @@ line-height:1.75;
 .booking__grid {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
-  gap: 4rem;
+  /* Adjusted gap for better desktop balance */
+  gap: clamp(3rem, 5vw, 5rem); 
   align-items: start;
 }
 .booking__contact-quick {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
-  margin-top: 1.6rem;
+  gap: 1rem; /* Slightly increased gap so touch targets don't overlap */
+  margin-top: 2rem;
 }
 .booking__contact-quick a {
   display: inline-flex;
   align-items: center;
   gap: 0.7rem;
   font-weight: 700;
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   color: var(--bordeaux);
+  transition: color 0.3s var(--ease);
+}
+.booking__contact-quick a:hover {
+  color: var(--gold);
 }
 .booking__form {
   background: #fff;
   border-radius: var(--radius-lg);
-  padding: 2.5rem;
+  padding: clamp(1.8rem, 4vw, 3rem); /* Fluid padding for the form card */
   box-shadow: var(--shadow-soft);
 }
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.2rem;
+  gap: 1.25rem;
 }
 .form-field {
-  margin-bottom: 1.3rem;
+  margin-bottom: 1.25rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 .form-field label {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--ink);
+  display: flex;
+  justify-content: space-between;
+}
+/* Added styling for the required asterisk */
+.form-field label span {
+  color: #b23a3a;
 }
 .form-field input,
 .form-field select,
 .form-field textarea {
   border: 1.5px solid rgba(42, 15, 22, 0.14);
   border-radius: var(--radius-sm);
-  padding: 0.85rem 1rem;
+  padding: 0.9rem 1rem;
   font-family: var(--font-body);
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   color: var(--ink);
   background: var(--ivory);
-  transition: border-color 0.3s var(--ease);
+  transition: border-color 0.3s var(--ease), background-color 0.3s var(--ease);
   width: 100%;
+}
+.form-field textarea {
+  resize: vertical;
+  min-height: 100px;
 }
 .form-field input:focus,
 .form-field select:focus,
@@ -2751,6 +2768,7 @@ line-height:1.75;
   font-size: 0.88rem;
   font-weight: 600;
   min-height: 1.2em;
+  text-align: center;
 }
 .form-status.is-success {
   color: var(--success);
@@ -2758,18 +2776,24 @@ line-height:1.75;
 .form-status.is-error {
   color: #b23a3a;
 }
+.form-status--success { color: #2e7d32; }
+.form-status--error { color: #c62828; }
 @media (max-width: 900px) {
   .booking__grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
+  .booking__intro {
+    text-align: center;
+  }
+  .booking__contact-quick {
+    align-items: center;
+  }
 }
 @media (max-width: 560px) {
   .form-row {
     grid-template-columns: 1fr;
-  }
-  .booking__form {
-    padding: 1.6rem;
+    gap: 0;
   }
 }
 

@@ -3,11 +3,13 @@
   "logo_suffix": "Jewellery",
   "links": [
     { "label": "House", "target": "#about" },
-    { "label": "Services", "target": "#services" },
+    { "label": "Why Choose Us", "target": "#why-choose" },
     { "label": "Collections", "target": "#gallery" },
     { "label": "Reviews", "target": "#testimonials" },
+    { "label": "Founder", "target": "#team" },
+    { "label": "Instagram", "target": "#instagram" },
     { "label": "FAQ", "target": "#faq" },
-    { "label": "Contact", "target": "#contact" }
+    { "label": "Contact", "target": "#book.booking" }
   ],
   "cta_label": "Book Consultation",
   "cta_target": "#book"

@@ -3,7 +3,7 @@
   <div class="container">
     <div class="site-footer__grid">
       <div class="site-footer__brand">
-        <img class="site-footer__mark" src="/static/images/image.png" alt="">
+        <img class="site-footer__mark" src="/static/images/image.png" alt="" />
         <h3>{{ content.business.name }}.co</h3>
         <p>{{ content.business.tagline }}</p>
         <div class="site-footer__socials">
@@ -31,11 +31,10 @@
 
     <div class="site-footer__bottom">
       <span
-        >&copy; {{ content.business.founded_year }}
-        {{ content.business.name }}. All rights reserved.</span>
-      <span class="site-footer__engine-note"
-        >Built with Love.</span
+        >&copy; {{ content.business.founded_year }} {{ content.business.name }}.
+        All rights reserved.</span
       >
+      <span class="site-footer__engine-note">Built with Love.</span>
     </div>
   </div>
 </footer>
