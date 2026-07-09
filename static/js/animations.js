@@ -95,7 +95,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ---------------- Parallax hero blobs ---------------- */
-  if (window.gsap && window.ScrollTrigger && !prefersReduced) {
+  // Skipped on mobile/touch: animating a heavily-blurred element on every scroll
+  // frame is expensive to repaint/composite and is the main cause of janky/
+  // shaky scrolling on phones, especially right at the hero section.
+  const isMobile = window.matchMedia("(max-width: 900px), (hover: none)").matches;
+  if (window.gsap && window.ScrollTrigger && !prefersReduced && !isMobile) {
     gsap.to(".hero__blob--1", { y: 120, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
     gsap.to(".hero__blob--2", { y: -80, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
 
