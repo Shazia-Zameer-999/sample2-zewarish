@@ -1,20 +1,113 @@
 /* gallery.js — gallery filters, lightbox, wishlist, before/after comparison slider */
 document.addEventListener("DOMContentLoaded", () => {
-  /* ---------------- Gallery filters ---------------- */
+/* ---------------- Gallery Filters & Load More / Show Less ---------------- */
   const filterBtns = document.querySelectorAll(".gallery__filter-btn");
   const galleryItems = document.querySelectorAll(".gallery__item");
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
+  const galleryActions = document.getElementById("galleryActions");
   
+  const INITIAL_ITEMS = 12; // Base number of items to show
+  let itemsToShow = INITIAL_ITEMS; 
+  const itemsToIncrease = 8;
+
+  function applyGalleryLogic() {
+    const activeBtn = document.querySelector(".gallery__filter-btn.is-active");
+    const filter = activeBtn ? activeBtn.dataset.filter : "All";
+    
+    let visibleCount = 0; 
+
+    // 1. Count how many total items match the current category
+    galleryItems.forEach((item) => {
+      if (filter === "All" || item.dataset.category === filter) {
+        visibleCount++;
+      }
+    });
+
+    let currentDisplayIndex = 0;
+    
+    // 2. Apply the display logic based on the itemsToShow limit
+    galleryItems.forEach((item) => {
+      const match = filter === "All" || item.dataset.category === filter;
+      
+      if (match) {
+        if (currentDisplayIndex < itemsToShow) {
+          item.style.display = ""; // Show
+        } else {
+          item.style.display = "none"; // Hide
+        }
+        currentDisplayIndex++;
+      } else {
+        item.style.display = "none"; // Hide non-matching category
+      }
+    });
+
+    // 3. Update the Button State (Load More vs Show Less)
+    if (galleryActions && loadMoreBtn) {
+      if (visibleCount <= INITIAL_ITEMS) {
+        // Hide button completely if the category has 12 or fewer items
+        galleryActions.style.display = "none";
+      } else {
+        galleryActions.style.display = "block";
+        
+        if (itemsToShow >= visibleCount) {
+          // All items are currently visible -> switch to "Show Less"
+          loadMoreBtn.innerText = "Show Less";
+          loadMoreBtn.dataset.state = "less";
+        } else {
+          // There are still more hidden items -> keep "Load More"
+          loadMoreBtn.innerText = "Load More Pieces";
+          loadMoreBtn.dataset.state = "more";
+        }
+      }
+    }
+  }
+
+  // Handle Category Filter Clicks
   filterBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
       filterBtns.forEach((b) => b.classList.remove("is-active"));
       btn.classList.add("is-active");
-      const filter = btn.dataset.filter;
-      galleryItems.forEach((item) => {
-        const match = filter === "All" || item.dataset.category === filter;
-        item.style.display = match ? "" : "none";
-      });
+      
+      // Reset the counter back to default when switching categories
+      itemsToShow = INITIAL_ITEMS; 
+      applyGalleryLogic();
     });
   });
+
+  // Handle Load More / Show Less Clicks
+// Handle Load More / Show Less Clicks
+// Handle Load More / Show Less Clicks
+  loadMoreBtn?.addEventListener("click", () => {
+    if (loadMoreBtn.dataset.state === "less") {
+      
+      // 1. Calculate the exact scroll target BEFORE changing the DOM.
+      // The top of the gallery grid is a fixed point on the page.
+      const grid = document.getElementById("galleryGrid");
+      let targetY = 0;
+      if (grid) {
+        // window.scrollY + rect.top gives the absolute document position
+        targetY = grid.getBoundingClientRect().top + window.scrollY - 100;
+      }
+
+      // 2. Unload logic: Reset to base count & shrink DOM
+      itemsToShow = INITIAL_ITEMS;
+      applyGalleryLogic(); 
+      
+      // 3. Jump to the pre-calculated fixed position.
+      // Using 'instant' forces the browser to override any global CSS smooth scrolling.
+      if (grid) {
+        window.scrollTo({ top: targetY, behavior: 'instant' }); 
+      }
+      
+    } else {
+      // Load more logic
+      itemsToShow += itemsToIncrease;
+      applyGalleryLogic();
+    }
+  });
+
+  // Run once on page load to set the initial limit
+  applyGalleryLogic();
 
   /* ---------------- Lightbox ---------------- */
   const lightbox = document.getElementById("lightbox");
@@ -45,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     const swatchNum = item.dataset.lightboxSwatch;
     lightboxSwatch.className = "swatch lightbox__swatch swatch--" + (((parseInt(swatchNum) || 0) % 12) + 1);
-    lightboxTitle.textContent = item.dataset.lightboxTitle || "";
+    // lightboxTitle.textContent = item.dataset.lightboxTitle || "";
     lightboxCategory.textContent = item.dataset.lightboxCategory || "";
 
     if (lightboxPrice) lightboxPrice.textContent = item.dataset.price || "";

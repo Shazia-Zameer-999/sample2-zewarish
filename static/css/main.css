@@ -1736,7 +1736,14 @@ height:28px;
   border-color: rgba(255, 255, 255, 0.5);
 }
 .lightbox__btn--save.is-saved i {
-  color: var(--gold-light);
+  color: var(--bordeaux); /* Changes the color to your brand's deep red */
+  font-weight: 900; /* Forces Font Awesome to switch from the 'regular' outline to the 'solid' filled heart */
+}
+
+/* Optional: Make the button border match the red heart when saved */
+.lightbox__btn--save.is-saved {
+  /* border-color: var(--bordeaux); */
+  background: rgba(42, 15, 22, 0.15); 
 }
 
 .lightbox__btn--order {
@@ -2070,6 +2077,33 @@ height:28px;
 .wishlist-card__order:hover {
   text-decoration: underline;
 }
+/* ==========================================================================
+   Load More Button
+   ========================================================================== */
+.btn-load-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 2.5rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--bordeaux);
+  background: transparent;
+  color: var(--bordeaux);
+  cursor: pointer;
+  transition: all 0.3s var(--ease);
+}
+
+.btn-load-more:hover {
+  background: var(--bordeaux);
+  color: var(--ivory);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(42, 15, 22, 0.15);
+}
 
 @media (max-width: 480px) {
   .wishlist-drawer {
@@ -2080,6 +2114,7 @@ height:28px;
     bottom: 4.8rem;
   }
 }
+
 /* ==========================================================================
    Before / After slider
    ========================================================================== */
